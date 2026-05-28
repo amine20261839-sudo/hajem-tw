@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Hajem TW | حجم تونس</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --R:#B22222;--R2:#DC143C;--G:#D4A017;--G2:#F5C842;
+  --BG:#080808;--N1:#111;--N2:#171717;--N3:#1F1F1F;--N4:#2A2A2A;--N5:#333;
+  --TX:#F0E6D3;--MU:#666;--MU2:#888;--GR:#16A34A;--GR2:#22C55E;
+  --BL:#1D4ED8;--BL2:#3B82F6;
+  --rad:12px;
+}
+html,body{height:100%;overflow-x:hidden}
+body{font-family:'Tajawal',sans-serif;background:var(--BG);color:var(--TX);min-height:100vh}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:var(--N1)}
+::-webkit-scrollbar-thumb{background:var(--N4);border-radius:99px}
+
+/* SCREENS */
+.sc{display:none;flex-direction:column;min-height:100vh}
+.sc.on{display:flex}
+
+/* UTILS */
+.gold{color:var(--G)}
+.green{color:var(--GR2)}
+.red{color:var(--R2)}
+.muted{color:var(--MU2)}
+.hidden{display:none!important}
+.flex{display:flex;align-items:center}
+.gap8{gap:8px}
+.gap12{gap:12px}
+
+/* ══════ LANDING ══════ */
+#sc-land{
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%,rgba(178,34,34,.25) 0%,transparent 60%),
+    repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,.015) 40px,rgba(255,255,255,.015) 41px),
+    repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,.015) 40px,rgba(255,255,255,.015) 41px),
+    var(--BG);
+  align-items:center;justify-content:center;padding:40px 16px;gap:32px;
+}
+.land-hero{text-align:center;animation:fadeDown .7s ease both}
+.land-scissors{font-size:72px;display:block;margin-bottom:12px;
+  filter:drop-shadow(0 0 30px rgba(220,20,60,.5));animation:spin 8s linear infinite}
+@keyframes spin{0%{transform:rotate(0deg)}50%{transform:rotate(5deg)}100%{transform:rotate(0deg)}}
+.land-brand{
+  font-size:56px;font-weight:900;letter-spacing:4px;
+  background:linear-gradient(135deg,#fff 0%,var(--G) 40%,var(--R2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.land-tagline{font-size:14px;color:var(--MU2);letter-spacing:3px;margin-top:4px;text-transform:uppercase}
+.tn-bar{display:flex;gap:4px;justify-content:center;margin-top:10px}
+.tn-bar span{height:3px;border-radius:2px;width:28px}
+.tnr{background:#E70013}.tnw{background:#fff}
+
+.land-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:520px;width:100%;animation:fadeUp .7s ease .2s both}
+@media(max-width:480px){.land-grid{grid-template-columns:1fr;max-width:280px}}
+.lg-card{
+  background:linear-gradient(145deg,var(--N2),var(--N1));
+  border:1.5px solid rgba(255,255,255,.07);border-radius:16px;
+  padding:24px 16px;text-align:center;cursor:pointer;transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.lg-card::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(178,34,34,.08),transparent);
+  opacity:0;transition:opacity .25s}
+.lg-card:hover::before{opacity:1}
+.lg-card:hover{border-color:rgba(178,34,34,.5);transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(178,34,34,.15)}
+.lg-card.admin-card:hover{border-color:rgba(212,160,23,.5);
+  box-shadow:0 16px 40px rgba(212,160,23,.15)}
+.lg-card.admin-card::before{background:linear-gradient(135deg,rgba(212,160,23,.08),transparent)}
+.lg-ico{font-size:40px;display:block;margin-bottom:10px}
+.lg-title{font-size:16px;font-weight:800;margin-bottom:4px}
+.lg-sub{font-size:11px;color:var(--MU2);line-height:1.5}
+.lg-btn{display:inline-block;margin-top:14px;padding:8px 18px;border-radius:100px;
+  font-size:12px;font-weight:800;background:linear-gradient(135deg,var(--R),var(--R2));color:#fff}
+.lg-card.admin-card .lg-btn{background:linear-gradient(135deg,var(--G),var(--G2));color:#000}
+.lg-card.client-card .lg-btn{background:linear-gradient(135deg,var(--GR),var(--GR2));color:#fff}
+
+/* ══════ SHARED TOPBAR ══════ */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;background:rgba(8,8,8,.97);
+  border-bottom:1px solid rgba(178,34,34,.15);
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(24px);flex-shrink:0;
+}
+.tb-brand{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none}
+.tb-brand-ico{width:34px;height:34px;background:linear-gradient(135deg,var(--R),var(--R2));
+  border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px}
+.tb-brand-nm{font-size:17px;font-weight:900;
+  background:linear-gradient(135deg,#fff,var(--G));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tb-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:6px;padding:5px 12px;
+  background:var(--N2);border:1px solid rgba(255,255,255,.06);border-radius:100px;
+  font-size:12px;font-weight:700}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--GR2);animation:pdot 2s infinite;flex-shrink:0}
+.rdot{width:7px;height:7px;border-radius:50%;background:var(--R2);flex-shrink:0}
+.tb-btn{padding:6px 14px;border-radius:100px;border:none;font-family:'Tajawal',sans-serif;
+  font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
+.tb-btn.outline{background:var(--N2);border:1px solid rgba(255,255,255,.08)!important;color:var(--TX)}
+.tb-btn.outline:hover{border-color:rgba(178,34,34,.4)!important}
+.tb-btn.red{background:transparent;border:1px solid rgba(220,20,60,.3)!important;color:#FCA5A5}
+.tb-btn.red:hover{background:rgba(220,20,60,.1)}
+.tb-btn.gold{background:linear-gradient(135deg,var(--G),var(--G2));color:#000}
+.tb-btn.green{background:linear-gradient(135deg,var(--GR),var(--GR2));color:#fff}
+
+/* ══════ BACK BUTTON ══════ */
+.back-btn{
+  display:flex;align-items:center;gap:5px;
+  padding:8px 16px 8px 12px;border-radius:100px;
+  background:var(--N3);border:1.5px solid rgba(255,255,255,.1)!important;
+  color:var(--TX);font-family:'Tajawal',sans-serif;
+  font-size:13px;font-weight:800;cursor:pointer;transition:all .22s;
+  white-space:nowrap;flex-shrink:0;
+  box-shadow:0 2px 8px rgba(0,0,0,.3);
+}
+.back-btn:hover{
+  background:rgba(178,34,34,.15);
+  border-color:rgba(178,34,34,.5)!important;
+  color:var(--R2);
+  transform:translateX(-2px);
+}
+.back-btn .back-arrow{
+  font-size:18px;line-height:1;
+  display:inline-block;
+  transform:rotate(180deg);
+}
+
+/* ══════ SHARED FIELDS ══════ */
+.fld{margin-bottom:12px}
+.fld label{display:block;font-size:10px;font-weight:800;color:var(--MU2);
+  letter-spacing:.8px;margin-bottom:6px;text-transform:uppercase}
+.fld input,.fld select,.fld textarea{
+  width:100%;padding:12px 13px;background:var(--N3);
+  border:1.5px solid rgba(255,255,255,.06);border-radius:10px;
+  color:var(--TX);font-family:'Tajawal',sans-serif;font-size:14px;
+  outline:none;transition:border-color .2s,box-shadow .2s}
+.fld input:focus,.fld select:focus,.fld textarea:focus{
+  border-color:var(--R);box-shadow:0 0 0 3px rgba(178,34,34,.1)}
+.fld input::placeholder,.fld textarea::placeholder{color:#333}
+.fld select option{background:var(--N3)}
+.fld textarea{resize:vertical;min-height:60px}
+.btn-main{width:100%;padding:13px;background:linear-gradient(135deg,var(--R),var(--R2));
+  border:none;border-radius:10px;color:#fff;font-family:'Tajawal',sans-serif;
+  font-size:15px;font-weight:900;cursor:pointer;transition:all .25s;margin-top:4px}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(178,34,34,.35)}
+.btn-main:active{transform:translateY(0)}
+.btn-gold{background:linear-gradient(135deg,var(--G),var(--G2));color:#000}
+.btn-gold:hover{box-shadow:0 10px 24px rgba(212,160,23,.35)!important}
+.btn-green{background:linear-gradient(135deg,var(--GR),var(--GR2));color:#fff}
+.btn-green:hover{box-shadow:0 10px 24px rgba(22,163,74,.35)!important}
+.err{background:rgba(220,20,60,.1);border:1px solid rgba(220,20,60,.3);
+  border-radius:9px;padding:10px 12px;font-size:12px;color:#FCA5A5;margin-bottom:12px;display:none}
+.divid{display:flex;align-items:center;gap:8px;margin:14px 0;color:var(--MU2);font-size:11px}
+.divid::before,.divid::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.06)}
+.demo-btn{width:100%;padding:10px;background:var(--N3);border:1.5px solid rgba(255,255,255,.07);
+  border-radius:10px;color:var(--TX);font-family:'Tajawal',sans-serif;font-size:12px;font-weight:700;
+  cursor:pointer;transition:all .2s;margin-bottom:6px}
+.demo-btn:hover{border-color:rgba(178,34,34,.4);background:rgba(178,34,34,.05)}
+
+/* ══════ AUTH BOX ══════ */
+.auth-bg{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:32px 16px;
+  background:radial-gradient(ellipse at 50% 0%,rgba(178,34,34,.1) 0%,transparent 55%),var(--BG)}
+.auth-wrap{width:100%;max-width:400px;animation:fadeUp .5s ease both}
+.auth-back{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;
+  color:var(--MU2);cursor:pointer;margin-bottom:14px;transition:color .2s}
+.auth-back:hover{color:var(--TX)}
+.auth-box{background:var(--N2);border:1px solid rgba(255,255,255,.07);border-radius:18px;
+  padding:28px 24px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.auth-tabs{display:flex;gap:3px;background:var(--N3);border-radius:10px;padding:3px;margin-bottom:22px}
+.atab{flex:1;padding:8px;border:none;border-radius:8px;background:transparent;
+  color:var(--MU2);font-family:'Tajawal',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s}
+.atab.on{background:linear-gradient(135deg,var(--R),var(--R2));color:#fff}
+.apanel{display:none}.apanel.on{display:block}
+.apanel h2{font-size:20px;font-weight:900;margin-bottom:3px}
+.apanel .sub{font-size:12px;color:var(--MU2);margin-bottom:18px;line-height:1.5}
+
+/* ══════ ADMIN PANEL ══════ */
+#sc-admin{flex-direction:column}
+.admin-nav{display:flex;padding:0 20px;border-bottom:1px solid rgba(255,255,255,.05);
+  flex-shrink:0;overflow-x:auto}
+.admin-nav::-webkit-scrollbar{display:none}
+.anav{padding:11px 16px;background:transparent;border:none;border-bottom:2px solid transparent;
+  color:var(--MU2);font-family:'Tajawal',sans-serif;font-size:12px;font-weight:700;
+  cursor:pointer;transition:all .2s;margin-bottom:-1px;white-space:nowrap}
+.anav.on{color:var(--G);border-bottom-color:var(--G)}
+.anav:hover:not(.on){color:var(--TX)}
+.admin-body{flex:1;padding:20px;max-width:1100px;margin:0 auto;width:100%;overflow-y:auto}
+.adp{display:none}.adp.on{display:block}
+
+/* Code cards */
+.codes-grid{display:flex;flex-direction:column;gap:10px}
+.code-card{
+  display:flex;align-items:center;gap:12px;padding:14px 16px;
+  background:var(--N2);border:1px solid rgba(255,255,255,.05);border-radius:12px;
+  transition:border-color .2s;flex-wrap:wrap;
+}
+.code-card:hover{border-color:rgba(212,160,23,.2)}
+.cc-code{font-size:18px;font-weight:900;color:var(--G);letter-spacing:3px;
+  background:rgba(212,160,23,.08);border:1px solid rgba(212,160,23,.2);
+  border-radius:8px;padding:6px 14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cc-info{flex:1;min-width:0}
+.cc-name{font-size:13px;font-weight:700}
+.cc-meta{font-size:11px;color:var(--MU2);margin-top:2px}
+.cc-status{padding:4px 10px;border-radius:100px;font-size:11px;font-weight:800;white-space:nowrap}
+.cc-act{padding:3px 10px;border-radius:100px;font-size:11px;font-weight:800;white-space:nowrap}
+.cs-active{background:rgba(22,163,74,.15);color:var(--GR2)}
+.cs-expired{background:rgba(220,20,60,.12);color:#FCA5A5}
+.cs-unused{background:rgba(212,160,23,.12);color:var(--G)}
+
+/* Generate code form */
+.gen-form{background:var(--N2);border:1px solid rgba(212,160,23,.15);border-radius:14px;padding:20px;margin-bottom:20px}
+.gen-form h3{font-size:15px;font-weight:800;margin-bottom:16px;color:var(--G)}
+.sub-plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:16px}
+.plan-card{background:var(--N3);border:2px solid rgba(255,255,255,.05);border-radius:10px;
+  padding:12px 10px;text-align:center;cursor:pointer;transition:all .2s}
+.plan-card:hover{border-color:rgba(212,160,23,.4)}
+.plan-card.sel{border-color:var(--G);background:rgba(212,160,23,.06)}
+.plan-card .pn{font-size:13px;font-weight:800;margin-bottom:2px}
+.plan-card .pp{font-size:18px;font-weight:900;color:var(--G)}
+.plan-card .pu{font-size:10px;color:var(--MU2)}
+.plan-card .pd{font-size:10px;color:var(--GR2);margin-top:3px}
+
+/* Admin stats */
+.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:20px}
+.ast{background:var(--N2);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:16px}
+.ast .ai{font-size:22px;margin-bottom:6px}
+.ast .an{font-size:24px;font-weight:900;color:var(--G);display:block}
+.ast .al{font-size:11px;color:var(--MU2)}
+
+/* ══════ BARBER AUTH ══════ */
+#sc-barber-auth{flex-direction:column}
+
+/* Subscription select */
+.sub-select{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:14px}
+.sub-card{background:var(--N3);border:2px solid rgba(255,255,255,.05);border-radius:10px;
+  padding:12px 10px;text-align:center;cursor:pointer;transition:all .2s;position:relative}
+.sub-card:hover{border-color:rgba(212,160,23,.4)}
+.sub-card.sel{border-color:var(--G);background:rgba(212,160,23,.06)}
+.sub-card .sct{font-size:12px;font-weight:700;margin-bottom:3px}
+.sub-card .scp{font-size:20px;font-weight:900;color:var(--G)}
+.sub-card .scu{font-size:10px;color:var(--MU2)}
+.sub-card .scs{font-size:10px;color:var(--GR2);margin-top:2px;font-weight:700}
+.sub-badge{position:absolute;top:-6px;right:-6px;background:var(--R2);color:#fff;
+  font-size:9px;font-weight:900;padding:2px 6px;border-radius:100px;white-space:nowrap}
+
+/* ══════ BARBER DASHBOARD ══════ */
+#sc-barber{flex-direction:column}
+
+/* Store toggle */
+.store-banner{
+  padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.05);
+}
+.store-banner.open-store{background:rgba(22,163,74,.08)}
+.store-banner.closed-store{background:rgba(220,20,60,.05)}
+.store-info{display:flex;align-items:center;gap:10px}
+.store-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.store-dot.open{background:var(--GR2);animation:pdot 1.5s infinite}
+.store-dot.closed{background:var(--R2)}
+.store-txt h4{font-size:14px;font-weight:800}
+.store-txt p{font-size:11px;color:var(--MU2)}
+.store-toggle-btn{padding:9px 20px;border:none;border-radius:100px;
+  font-family:'Tajawal',sans-serif;font-size:13px;font-weight:900;cursor:pointer;transition:all .25s}
+.store-toggle-btn.to-open{background:linear-gradient(135deg,var(--GR),var(--GR2));color:#fff}
+.store-toggle-btn.to-close{background:linear-gradient(135deg,var(--R),var(--R2));color:#fff}
+
+/* Dash nav */
+.dash-nav{display:flex;padding:0 20px;border-bottom:1px solid rgba(255,255,255,.05);
+  flex-shrink:0;overflow-x:auto}
+.dash-nav::-webkit-scrollbar{display:none}
+.dnav{padding:11px 16px;background:transparent;border:none;border-bottom:2px solid transparent;
+  color:var(--MU2);font-family:'Tajawal',sans-serif;font-size:12px;font-weight:700;
+  cursor:pointer;transition:all .2s;margin-bottom:-1px;white-space:nowrap}
+.dnav.on{color:var(--R2);border-bottom-color:var(--R2)}
+.dnav:hover:not(.on){color:var(--TX)}
+
+.dash-body{flex:1;padding:20px;max-width:1100px;margin:0 auto;width:100%;overflow-y:auto}
+.dp{display:none}.dp.on{display:block}
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:20px}
+.sc2{background:var(--N2);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:16px;transition:border-color .2s}
+.sc2:hover{border-color:rgba(178,34,34,.2)}
+.sc2 .si{font-size:22px;margin-bottom:6px}
+.sc2 .sn{font-size:24px;font-weight:900;color:var(--R2);display:block}
+.sc2 .sl{font-size:11px;color:var(--MU2)}
+
+.sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.sec-t{font-size:15px;font-weight:800;display:flex;align-items:center;gap:6px}
+.sec-line{height:1px;background:rgba(255,255,255,.04);margin-bottom:14px}
+
+/* QUEUE TABLE */
+.queue-table-wrap{overflow-x:auto;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+.queue-table{width:100%;border-collapse:collapse;min-width:600px}
+.queue-table th{
+  padding:10px 14px;text-align:right;font-size:11px;font-weight:800;color:var(--MU2);
+  letter-spacing:.5px;text-transform:uppercase;
+  background:var(--N3);border-bottom:1px solid rgba(255,255,255,.06);
+}
+.queue-table td{padding:12px 14px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:middle}
+.queue-table tr:last-child td{border-bottom:none}
+.queue-table tr:hover td{background:rgba(255,255,255,.02)}
+.qt-num{font-size:20px;font-weight:900;color:var(--R2);font-variant-numeric:tabular-nums}
+.qt-num.now{color:var(--GR2)}
+.qt-av{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--R),var(--R2));
+  display:flex;align-items:center;justify-content:center;font-size:16px;overflow:hidden;flex-shrink:0}
+.qt-av img{width:100%;height:100%;object-fit:cover}
+.qt-name{font-weight:700;font-size:14px}
+.qt-phone{font-size:11px;color:var(--MU2);margin-top:1px}
+.qt-svc-tag{display:inline-block;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:700;
+  background:rgba(178,34,34,.12);border:1px solid rgba(178,34,34,.2);color:var(--R2);
+  margin:1px;white-space:nowrap}
+.qt-svc-tag.ladies{background:rgba(212,160,23,.1);border-color:rgba(212,160,23,.2);color:var(--G)}
+.qt-time{font-weight:700;font-size:13px}
+.qt-badge{padding:3px 10px;border-radius:100px;font-size:10px;font-weight:800}
+.qb-up{background:rgba(212,160,23,.15);color:var(--G)}
+.qb-now{background:rgba(22,163,74,.15);color:var(--GR2)}
+.qb-done{background:rgba(255,255,255,.08);color:var(--MU2)}
+.qt-act-btns{display:flex;gap:5px}
+.qt-act{padding:4px 10px;border:none;border-radius:6px;font-family:'Tajawal',sans-serif;
+  font-size:11px;font-weight:700;cursor:pointer;transition:all .2s}
+.qt-act.done{background:rgba(22,163,74,.15);color:var(--GR2);border:1px solid rgba(22,163,74,.2)}
+.qt-act.done:hover{background:rgba(22,163,74,.25)}
+.qt-act.cancel{background:rgba(220,20,60,.1);color:#FCA5A5;border:1px solid rgba(220,20,60,.15)}
+.qt-act.cancel:hover{background:rgba(220,20,60,.2)}
+
+/* Notif */
+.n-bell{position:relative;width:32px;height:32px;background:var(--N2);
+  border:1px solid rgba(255,255,255,.07);border-radius:8px;display:flex;align-items:center;
+  justify-content:center;cursor:pointer;font-size:14px;flex-shrink:0;transition:all .2s;user-select:none}
+.n-bell:hover{border-color:rgba(178,34,34,.4)}
+.n-badge{position:absolute;top:-5px;right:-5px;min-width:16px;height:16px;
+  background:var(--R2);border-radius:8px;font-size:9px;font-weight:900;
+  display:none;align-items:center;justify-content:center;border:2px solid var(--BG);padding:0 2px}
+.n-badge.on{display:flex}
+.n-panel{position:fixed;top:56px;left:12px;width:300px;background:var(--N2);
+  border:1px solid rgba(178,34,34,.2);border-radius:14px;z-index:200;
+  box-shadow:0 16px 50px rgba(0,0,0,.7);display:none;animation:fadeDown .2s ease;
+  max-height:75vh;overflow-y:auto}
+.n-panel.on{display:block}
+.np-hdr{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.05);
+  display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--N2)}
+.np-hdr h3{font-size:13px;font-weight:800}
+.np-clear{font-size:11px;color:var(--R2);cursor:pointer;font-weight:700}
+.ni{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.04);
+  display:flex;gap:10px;cursor:pointer;transition:background .2s}
+.ni:hover{background:rgba(178,34,34,.04)}
+.ni:last-child{border-bottom:none}
+.ni.unread{background:rgba(178,34,34,.03)}
+.ni-ico{width:32px;height:32px;border-radius:8px;background:rgba(178,34,34,.14);
+  display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.ni-t{font-size:12px;font-weight:700;margin-bottom:1px}
+.ni-d{font-size:11px;color:var(--MU2);line-height:1.4}
+.ni-tm{font-size:10px;color:var(--MU2);margin-top:2px}
+.np-empty{padding:24px;text-align:center;color:var(--MU2);font-size:12px}
+
+/* Settings cards */
+.set-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.set-grid{grid-template-columns:1fr}}
+.set-card{background:var(--N2);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:18px}
+.set-card h3{font-size:13px;font-weight:800;margin-bottom:14px;color:var(--G);display:flex;align-items:center;gap:6px}
+.tog-row{display:flex;justify-content:space-between;align-items:center;
+  padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.tog-row:last-child{border-bottom:none}
+.tl{font-size:13px;font-weight:600}
+.ts2{font-size:10px;color:var(--MU2);margin-top:1px}
+.tog{position:relative;width:40px;height:21px;flex-shrink:0}
+.tog input{opacity:0;width:0;height:0}
+.tog-track{position:absolute;inset:0;background:var(--N4);border-radius:100px;cursor:pointer;transition:background .2s}
+.tog input:checked+.tog-track{background:var(--R)}
+.tog-track::after{content:'';position:absolute;top:2.5px;right:2.5px;width:16px;height:16px;
+  background:#fff;border-radius:50%;transition:transform .2s}
+.tog input:checked+.tog-track::after{transform:translateX(-19px)}
+
+/* Share box */
+.share-box{display:flex;align-items:center;gap:6px;background:var(--N3);
+  border:1px solid rgba(178,34,34,.18);border-radius:9px;padding:8px 11px;margin-top:8px}
+.share-box input{flex:1;background:none;border:none;color:var(--G);
+  font-family:'Tajawal',sans-serif;font-size:11px;outline:none;direction:ltr}
+.share-box button{padding:4px 10px;background:rgba(178,34,34,.14);border:1px solid rgba(178,34,34,.28);
+  border-radius:6px;color:var(--R2);font-family:'Tajawal',sans-serif;font-size:10px;font-weight:700;
+  cursor:pointer;transition:all .2s}
+.share-box button:hover{background:rgba(178,34,34,.24)}
+
+/* Sub info */
+.sub-info-box{background:rgba(212,160,23,.07);border:1px solid rgba(212,160,23,.2);
+  border-radius:10px;padding:14px;margin-bottom:14px}
+.sub-info-box .si-title{font-size:13px;font-weight:800;color:var(--G);margin-bottom:4px}
+.sub-info-box .si-meta{font-size:12px;color:var(--MU2)}
+.sub-info-box .si-days{font-size:22px;font-weight:900;color:var(--G);margin-top:4px}
+
+/* ══════ CLIENT ══════ */
+#sc-client{flex-direction:column}
+.loc-bar{display:flex;align-items:center;gap:5px;padding:8px 20px;
+  background:var(--N1);border-bottom:1px solid rgba(255,255,255,.04);
+  font-size:11px;color:var(--MU2);overflow-x:auto;white-space:nowrap;flex-shrink:0}
+.loc-bar::-webkit-scrollbar{display:none}
+.lc{font-weight:700;cursor:pointer;transition:color .2s}
+.lc:hover,.lc.active{color:var(--G)}
+.lsep{color:rgba(255,255,255,.15)}
+.region-wrap{flex:1;overflow-y:auto;padding:18px 20px}
+.reg-title{font-size:18px;font-weight:900;margin-bottom:4px}
+.reg-sub{font-size:12px;color:var(--MU2);margin-bottom:16px}
+.reg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:9px;margin-bottom:20px}
+.rgn-card{background:var(--N2);border:1.5px solid rgba(255,255,255,.06);border-radius:12px;
+  padding:16px 12px;text-align:center;cursor:pointer;transition:all .2s}
+.rgn-card:hover{border-color:rgba(178,34,34,.4);transform:translateY(-2px)}
+.rgn-ico{font-size:28px;display:block;margin-bottom:7px}
+.rgn-name{font-size:13px;font-weight:700}
+.rgn-count{font-size:10px;color:var(--MU2);margin-top:2px}
+
+/* ══════ EXPLORE ══════ */
+#sc-explore{flex-direction:column}
+.exp-hero{
+  background:linear-gradient(135deg,rgba(178,34,34,.1) 0%,rgba(212,160,23,.03) 100%);
+  border-bottom:1px solid rgba(178,34,34,.1);padding:22px 20px;
+}
+.exp-hero h1{font-size:20px;font-weight:900;margin-bottom:4px}
+.exp-hero h1 span{background:linear-gradient(135deg,var(--R2),var(--G));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.exp-hero p{font-size:12px;color:var(--MU2);margin-bottom:14px}
+.search-row{display:flex;gap:7px;flex-wrap:wrap}
+.search-row input{flex:1;min-width:130px;padding:11px 13px;background:var(--N2);
+  border:1.5px solid rgba(255,255,255,.07);border-radius:9px;color:var(--TX);
+  font-family:'Tajawal',sans-serif;font-size:13px;outline:none;transition:border-color .2s}
+.search-row input:focus{border-color:var(--R)}
+.search-row input::placeholder{color:#333}
+.s-btn{padding:11px 16px;background:linear-gradient(135deg,var(--R),var(--R2));border:none;
+  border-radius:9px;color:#fff;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:800;
+  cursor:pointer;transition:all .2s;white-space:nowrap}
+.s-btn:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(178,34,34,.3)}
+.fchips{display:flex;gap:6px;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,.04);
+  overflow-x:auto;flex-shrink:0}
+.fchips::-webkit-scrollbar{display:none}
+.fchip{padding:6px 14px;background:var(--N2);border:1.5px solid rgba(255,255,255,.06);
+  border-radius:100px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;
+  transition:all .2s;color:var(--MU2)}
+.fchip:hover{border-color:rgba(178,34,34,.4);color:var(--TX)}
+.fchip.on{background:rgba(178,34,34,.1);border-color:var(--R2);color:var(--R2)}
+.exp-body{flex:1;padding:18px 20px;overflow-y:auto}
+.barbers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+
+/* Barber card */
+.bc{background:var(--N2);border:1.5px solid rgba(255,255,255,.05);border-radius:16px;
+  overflow:hidden;cursor:pointer;transition:all .25s}
+.bc:hover{border-color:rgba(178,34,34,.35);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.bc-top{padding:16px;display:flex;gap:12px;align-items:flex-start}
+.bc-av{width:56px;height:56px;border-radius:12px;
+  background:linear-gradient(135deg,var(--R),var(--R2));
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+  flex-shrink:0;border:2px solid rgba(178,34,34,.25);overflow:hidden}
+.bc-av img{width:100%;height:100%;object-fit:cover}
+.bc-name{font-size:15px;font-weight:800;margin-bottom:2px}
+.bc-spec{font-size:11px;color:var(--MU2);margin-bottom:6px}
+.bc-chips{display:flex;gap:4px;flex-wrap:wrap}
+.bc-chip{font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;
+  background:rgba(255,255,255,.05);color:var(--MU2)}
+.bc-store-status{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;
+  padding:3px 9px;border-radius:100px;width:fit-content;margin:0 16px 6px}
+.bc-store-status.open{background:rgba(22,163,74,.12);color:var(--GR2);border:1px solid rgba(22,163,74,.2)}
+.bc-store-status.closed{background:rgba(220,20,60,.1);color:#FCA5A5;border:1px solid rgba(220,20,60,.15)}
+.avail-slots{display:flex;gap:4px;flex-wrap:wrap;padding:0 16px 12px}
+.ms{padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700}
+.ms-g{background:rgba(22,163,74,.1);color:var(--GR2);border:1px solid rgba(22,163,74,.2)}
+.ms-r{background:rgba(220,20,60,.07);color:rgba(220,20,60,.45);border:1px solid rgba(220,20,60,.12);text-decoration:line-through}
+.bc-bottom{padding:10px 16px;border-top:1px solid rgba(255,255,255,.05);
+  display:flex;align-items:center;justify-content:space-between;gap:8px}
+.bc-avail-txt{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700}
+.dot-g{width:6px;height:6px;border-radius:50%;background:var(--GR2);flex-shrink:0}
+.dot-r{width:6px;height:6px;border-radius:50%;background:var(--R2);flex-shrink:0}
+.bc-book-btn{padding:7px 16px;background:linear-gradient(135deg,var(--R),var(--R2));border:none;
+  border-radius:100px;color:#fff;font-family:'Tajawal',sans-serif;font-size:11px;font-weight:800;
+  cursor:pointer;transition:all .2s;white-space:nowrap}
+.bc-book-btn:hover{transform:scale(1.04);box-shadow:0 4px 14px rgba(178,34,34,.35)}
+.bc-closed-overlay{padding:10px 16px;text-align:center;
+  background:rgba(220,20,60,.06);border-top:1px solid rgba(220,20,60,.1);
+  font-size:11px;color:#FCA5A5;font-weight:700}
+
+/* ══════ BOOKING PAGE ══════ */
+#sc-booking{flex-direction:column;overflow-y:auto}
+.bp-hdr{background:linear-gradient(135deg,rgba(178,34,34,.1) 0%,transparent 100%);
+  border-bottom:1px solid rgba(178,34,34,.1);padding:20px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bp-av{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--R),var(--R2));
+  display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;overflow:hidden}
+.bp-av img{width:100%;height:100%;object-fit:cover}
+.bp-name{font-size:20px;font-weight:900;margin-bottom:2px}
+.bp-spec{font-size:11px;color:var(--MU2);margin-bottom:6px}
+.bp-meta{display:flex;gap:6px;flex-wrap:wrap}
+.bmc{display:flex;align-items:center;gap:3px;font-size:10px;font-weight:700;
+  padding:3px 10px;background:rgba(178,34,34,.08);border:1px solid rgba(178,34,34,.15);border-radius:100px}
+
+/* Gender selector */
+.gender-sel{display:flex;gap:8px;margin-bottom:16px}
+.gender-btn{flex:1;padding:12px;border:2px solid rgba(255,255,255,.07);border-radius:10px;
+  background:var(--N2);color:var(--TX);font-family:'Tajawal',sans-serif;font-size:13px;font-weight:700;
+  cursor:pointer;text-align:center;transition:all .2s}
+.gender-btn:hover{border-color:rgba(178,34,34,.4)}
+.gender-btn.sel{border-color:var(--R2);background:rgba(178,34,34,.08)}
+.gender-btn.ladies.sel{border-color:var(--G);background:rgba(212,160,23,.08)}
+
+.bk-wrap{display:grid;grid-template-columns:1fr 300px;gap:18px;
+  padding:18px 20px;max-width:1000px;margin:0 auto;width:100%}
+@media(max-width:760px){.bk-wrap{grid-template-columns:1fr;padding:14px}}
+
+.step-h{font-size:13px;font-weight:800;margin-bottom:10px;margin-top:20px;
+  display:flex;align-items:center;gap:6px}
+.step-h:first-child{margin-top:0}
+.step-n{width:20px;height:20px;background:linear-gradient(135deg,var(--R),var(--R2));
+  border-radius:5px;display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:900;color:#fff;flex-shrink:0}
+
+/* Multi-select services */
+.svcs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:7px}
+.svc-c{background:var(--N2);border:2px solid rgba(255,255,255,.05);border-radius:10px;
+  padding:12px 10px;cursor:pointer;transition:all .2s;text-align:center;position:relative}
+.svc-c:hover{border-color:rgba(178,34,34,.35);transform:translateY(-1px)}
+.svc-c.sel{border-color:var(--R2);background:rgba(178,34,34,.06)}
+.svc-c.ladies-svc.sel{border-color:var(--G);background:rgba(212,160,23,.06)}
+.svc-em{font-size:22px;display:block;margin-bottom:5px}
+.svc-nm{font-size:12px;font-weight:700;margin-bottom:2px}
+.svc-pr{font-size:13px;font-weight:900;color:var(--G)}
+.svc-pr small{font-size:9px;color:var(--MU2);font-weight:400}
+.svc-chk{position:absolute;top:5px;left:5px;width:14px;height:14px;background:var(--R2);
+  border-radius:4px;display:none;align-items:center;justify-content:center;font-size:8px;color:#fff}
+.svc-c.sel .svc-chk{display:flex}
+.svc-c.ladies-svc.sel .svc-chk{background:var(--G)}
+
+/* Dates */
+.date-strip{display:flex;gap:6px;overflow-x:auto;padding-bottom:3px;scrollbar-width:none}
+.date-strip::-webkit-scrollbar{display:none}
+.dch{flex-shrink:0;padding:9px 12px;background:var(--N2);border:1.5px solid rgba(255,255,255,.05);
+  border-radius:9px;cursor:pointer;text-align:center;transition:all .2s;min-width:60px}
+.dch:hover:not(.doff){border-color:rgba(178,34,34,.35)}
+.dch.sel{background:linear-gradient(135deg,var(--R),var(--R2));border-color:transparent;color:#fff}
+.dch .dd{font-size:9px;font-weight:700;opacity:.7}
+.dch .dn{font-size:18px;font-weight:900;line-height:1.1}
+.dch .dm{font-size:9px;opacity:.7}
+.dch.doff{opacity:.3;cursor:not-allowed}
+.dch .doff-l{font-size:8px;color:#FCA5A5;margin-top:1px}
+
+/* Time */
+.t-legend{display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.tl2{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--MU2);font-weight:600}
+.tld{width:10px;height:10px;border-radius:3px}
+.tld.av{background:rgba(22,163,74,.4);border:1.5px solid var(--GR2)}
+.tld.tk{background:rgba(220,20,60,.3);border:1.5px solid var(--R2)}
+.tld.sl{background:var(--R)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:5px}
+.tsl{padding:9px 4px;border-radius:7px;text-align:center;cursor:pointer;font-size:12px;
+  font-weight:700;font-family:'Tajawal',sans-serif;border:2px solid transparent;transition:all .2s}
+.tsl.avail{background:rgba(22,163,74,.07);border-color:rgba(22,163,74,.25);color:var(--GR2)}
+.tsl.avail:hover{background:rgba(22,163,74,.14);border-color:rgba(22,163,74,.5);transform:translateY(-1px)}
+.tsl.taken{background:rgba(220,20,60,.05);border-color:rgba(220,20,60,.12);
+  color:rgba(220,20,60,.4);cursor:not-allowed;text-decoration:line-through}
+.tsl.sel{background:linear-gradient(135deg,var(--R),var(--R2));border-color:transparent;color:#fff}
+.tsl.sel:hover{transform:translateY(-1px)}
+.ts-sub{font-size:8px;font-weight:600;opacity:.6;display:block;margin-top:1px}
+
+/* Form */
+.cf{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+@media(max-width:440px){.cf{grid-template-columns:1fr}}
+.cf .full{grid-column:1/-1}
+
+/* Sidebar */
+.bk-side{background:var(--N2);border:1px solid rgba(178,34,34,.14);border-radius:14px;
+  padding:18px;position:sticky;top:70px}
+.bks-t{font-size:13px;font-weight:800;color:var(--G);margin-bottom:14px;display:flex;align-items:center;gap:5px}
+.sum-row{display:flex;justify-content:space-between;align-items:flex-start;
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px;gap:6px}
+.sum-row:last-of-type{border-bottom:none}
+.sum-l{color:var(--MU2);flex-shrink:0}
+.sum-v{font-weight:700;text-align:left}
+.sum-tot{display:flex;justify-content:space-between;align-items:center;
+  margin-top:10px;padding-top:10px;border-top:1px solid rgba(178,34,34,.22);
+  font-size:17px;font-weight:900;color:var(--G)}
+.live-box{background:rgba(22,163,74,.06);border:1px solid rgba(22,163,74,.2);
+  border-radius:9px;padding:10px;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.lpulse{width:7px;height:7px;border-radius:50%;background:var(--GR2);animation:pdot 1.5s infinite;flex-shrink:0}
+.live-t{font-size:11px;font-weight:700}
+.live-s{font-size:10px;color:var(--MU2)}
+.btn-book{width:100%;padding:14px;background:linear-gradient(135deg,var(--R),var(--R2));
+  border:none;border-radius:10px;color:#fff;font-family:'Tajawal',sans-serif;font-size:14px;
+  font-weight:900;cursor:pointer;transition:all .25s;margin-top:12px;
+  box-shadow:0 5px 16px rgba(178,34,34,.2)}
+.btn-book:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(178,34,34,.35)}
+.btn-book:active{transform:translateY(0)}
+.mq-sec{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.04)}
+.mq-sec h4{font-size:10px;font-weight:800;color:var(--MU2);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+.mqi{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:11px}
+.mqi:last-child{border-bottom:none}
+.mqp{width:17px;height:17px;border-radius:4px;background:rgba(178,34,34,.1);color:var(--R2);
+  font-weight:900;font-size:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mqp.now{background:var(--GR2);color:#000}
+
+/* ══════ MODALS ══════ */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;
+  align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(12px)}
+.modal-bg.on{display:flex}
+.modal-box{background:var(--N2);border:1px solid rgba(178,34,34,.25);border-radius:18px;
+  padding:32px 26px;text-align:center;max-width:380px;width:100%;
+  animation:mpop .35s cubic-bezier(.34,1.56,.64,1)}
+.modal-box .mi{font-size:48px;display:block;margin-bottom:12px}
+.modal-box h2{font-size:20px;font-weight:900;margin-bottom:6px;color:var(--G)}
+.modal-box p{color:var(--MU2);font-size:12px;line-height:1.6;margin-bottom:14px}
+.bk-ref{background:rgba(212,160,23,.08);border:1.5px solid rgba(212,160,23,.22);
+  border-radius:9px;padding:10px;font-size:18px;font-weight:900;color:var(--G);
+  letter-spacing:4px;margin-bottom:14px}
+.modal-rows{text-align:right;margin-bottom:16px}
+.mrow{display:flex;justify-content:space-between;padding:5px 0;
+  border-bottom:1px solid rgba(255,255,255,.04);font-size:12px}
+.mrow .ml{color:var(--MU2)}.mrow .mr{font-weight:700}
+.modal-close{padding:11px 30px;background:linear-gradient(135deg,var(--R),var(--R2));
+  border:none;border-radius:100px;color:#fff;font-family:'Tajawal',sans-serif;
+  font-size:13px;font-weight:900;cursor:pointer;transition:all .2s}
+.modal-close:hover{transform:scale(1.05)}
+
+/* TOAST */
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);
+  background:var(--N3);border:1px solid rgba(178,34,34,.3);border-radius:9px;
+  padding:10px 18px;font-size:13px;font-weight:700;z-index:400;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;
+  box-shadow:0 8px 28px rgba(0,0,0,.5);pointer-events:none}
+.toast.on{transform:translateX(-50%) translateY(0)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes fadeDown{from{transform:translateY(-12px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes pdot{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}
+@keyframes mpop{from{transform:scale(.78);opacity:0}to{transform:scale(1);opacity:1}}
+
+@media(max-width:600px){
+  .topbar{padding:10px 12px}
+  .dash-body,.admin-body,.exp-body,.region-wrap{padding:14px}
+  .barbers-grid{grid-template-columns:1fr}
+  .stats-row,.admin-stats{grid-template-columns:1fr 1fr}
+  .bp-hdr,.bk-wrap{padding:14px}
+  .queue-table-wrap{font-size:12px}
+  .n-panel{width:calc(100vw - 24px);left:12px}
+  .land-brand{font-size:40px}
+  .land-grid{max-width:260px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ LANDING ══════════════ -->
+<div id="sc-land" class="sc on">
+  <div class="land-hero">
+    <span class="land-scissors">✂️</span>
+    <div class="land-brand">HAJEM TW</div>
+    <div class="land-tagline">منصة الحلاقة التونسية الأولى</div>
+    <div class="tn-bar"><span class="tnr"></span><span class="tnw"></span><span class="tnr"></span></div>
+  </div>
+
+  <div class="land-grid">
+    <div class="lc client-card" onclick="go('sc-client-auth')">
+      <span class="lg-ico">🔍</span>
+      <div class="lg-title">حريف</div>
+      <div class="lg-sub">دور على حلاق وأحجز مكانك</div>
+      <div class="lg-btn">مجاني ←</div>
+    </div>
+    <div class="lc" onclick="go('sc-barber-auth')">
+      <span class="lg-ico">💈</span>
+      <div class="lg-title">حلاق</div>
+      <div class="lg-sub">افتح متجرك واستقبل الحجوزات</div>
+      <div class="lg-btn">اشترك ←</div>
+    </div>
+    <div class="lc admin-card" onclick="go('sc-admin-auth')">
+      <span class="lg-ico">👑</span>
+      <div class="lg-title">آدمين</div>
+      <div class="lg-sub">لوحة إدارة المنصة</div>
+      <div class="lg-btn">دخول ←</div>
+    </div>
+  </div>
+
+  <!-- OWNER CONTACT CARD -->
+  <div style="
+    margin-top:8px;
+    background:linear-gradient(145deg,var(--N2),var(--N1));
+    border:1.5px solid rgba(212,160,23,.2);
+    border-radius:18px;padding:20px 22px;
+    max-width:520px;width:100%;
+    animation:fadeUp .7s ease .4s both;
+    text-align:center;
+  ">
+    <div style="font-size:11px;font-weight:800;color:var(--MU2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px">
+      👑 صاحب المنصة
+    </div>
+    <div style="font-size:20px;font-weight:900;color:var(--G);margin-bottom:4px">Hamza Amine</div>
+    <div style="font-size:12px;color:var(--MU2);margin-bottom:16px">للاشتراك أو أي استفسار — تواصل معنا مباشرة</div>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/amine_hama_00" target="_blank" style="
+        display:flex;align-items:center;gap:7px;
+        padding:10px 18px;border-radius:100px;text-decoration:none;
+        background:linear-gradient(135deg,#833AB4,#FD1D1D,#F77737);
+        color:#fff;font-size:13px;font-weight:800;transition:all .2s;
+      " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(253,29,29,.35)'"
+         onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        amine_hama_00
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/MnAmine" target="_blank" style="
+        display:flex;align-items:center;gap:7px;
+        padding:10px 18px;border-radius:100px;text-decoration:none;
+        background:linear-gradient(135deg,#1877F2,#0a5ddb);
+        color:#fff;font-size:13px;font-weight:800;transition:all .2s;
+      " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(24,119,242,.35)'"
+         onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+        Mń Amine
+      </a>
+      <!-- Phone/WhatsApp -->
+      <a href="https://wa.me/21624160920" style="
+        display:flex;align-items:center;gap:7px;
+        padding:10px 18px;border-radius:100px;text-decoration:none;
+        background:linear-gradient(135deg,#25D366,#128C7E);
+        color:#fff;font-size:13px;font-weight:800;transition:all .2s;
+      " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(37,211,102,.35)'"
+         onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        تواصل معنا
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ ADMIN AUTH ══════════════ -->
+<div id="sc-admin-auth" class="sc">
+  <div class="topbar">
+    <button class="back-btn" onclick="go('sc-land')"><span class="back-arrow">›</span> رجوع</button>
+    <div class="tb-brand" onclick="go('sc-land')">
+      <div class="tb-brand-ico">✂️</div><div class="tb-brand-nm">HAJEM TW</div>
+    </div>
+    <div style="width:80px"></div>
+  </div>
+  <div class="auth-bg">
+    <div class="auth-wrap">
+      <div class="auth-box">
+        <div style="text-align:center;margin-bottom:18px">
+          <div style="font-size:44px;margin-bottom:8px">👑</div>
+          <h2 style="font-size:20px;font-weight:900;color:var(--G)">Hamza Amine</h2>
+          <p style="font-size:12px;color:var(--MU2);margin-top:4px">لوحة إدارة HAJEM TW</p>
+        </div>
+        <div class="err" id="adm-err">كلمة السر غلط</div>
+        <div class="fld">
+          <label>🔑 كلمة السر السرية</label>
+          <input type="password" id="adm-pass" placeholder="••••••••"
+            onkeydown="if(event.key==='Enter')doAdminLogin()">
+        </div>
+        <button class="btn-main btn-gold" onclick="doAdminLogin()">👑 دخول</button>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05);
+          display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+          <a href="https://www.instagram.com/amine_hama_00" target="_blank" style="
+            display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;
+            text-decoration:none;background:linear-gradient(135deg,#833AB4,#FD1D1D,#F77737);
+            color:#fff;font-size:11px;font-weight:800">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            amine_hama_00
+          </a>
+          <a href="https://www.facebook.com/MnAmine" target="_blank" style="
+            display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;
+            text-decoration:none;background:linear-gradient(135deg,#1877F2,#0a5ddb);
+            color:#fff;font-size:11px;font-weight:800">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Mń Amine
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ ADMIN PANEL ══════════════ -->
+<div id="sc-admin" class="sc">
+  <div class="topbar">
+    <button class="back-btn" onclick="go('sc-land')"><span class="back-arrow">›</span> رجوع</button>
+    <div class="tb-brand" onclick="go('sc-land')">
+      <div class="tb-brand-ico">✂️</div><div class="tb-brand-nm">HAJEM TW</div>
+    </div>
+    <div class="tb-right">
+      <div class="pill" style="border-color:rgba(212,160,23,.3)">
+        <span style="color:var(--G)">👑</span><span style="color:var(--G)">Hamza Amine</span>
+      </div>
+      <button class="tb-btn red" onclick="go('sc-land')">خروج</button>
+    </div>
+  </div>
+  <div class="admin-nav">
+    <button class="anav on" id="an-ov" onclick="switchAdmin('ov')">📊 نظرة عامة</button>
+    <button class="anav" id="an-codes" onclick="switchAdmin('codes')">🔑 الأكواد</button>
+    <button class="anav" id="an-barbers" onclick="switchAdmin('barbers')">💈 الحلاقين</button>
+  </div>
+  <div class="admin-body">
+
+    <!-- OVERVIEW -->
+    <div class="adp on" id="adp-ov">
+      <!-- Owner info bar -->
+      <div style="
+        background:linear-gradient(135deg,rgba(212,160,23,.08),rgba(212,160,23,.03));
+        border:1px solid rgba(212,160,23,.2);border-radius:14px;
+        padding:16px 20px;margin-bottom:20px;
+        display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+      ">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="font-size:32px">👑</div>
+          <div>
+            <div style="font-size:16px;font-weight:900;color:var(--G)">Hamza Amine</div>
+            <div style="font-size:11px;color:var(--MU2)">مالك المنصة — HAJEM TW</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a href="https://www.instagram.com/amine_hama_00" target="_blank" style="
+            display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;
+            text-decoration:none;background:linear-gradient(135deg,#833AB4,#FD1D1D,#F77737);
+            color:#fff;font-size:11px;font-weight:800">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            @amine_hama_00
+          </a>
+          <a href="https://www.facebook.com/MnAmine" target="_blank" style="
+            display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:100px;
+            text-decoration:none;background:linear-gradient(135deg,#1877F2,#0a5ddb);
+            color:#fff;font-size:11px;font-weight:800">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Mń Amine
+          </a>
+        </div>
+      </div>
+
+      <div class="admin-stats">
+        <div class="ast"><div class="ai">💈</div><span class="an" id="adm-st-barbers">0</span><div class="al">حلاقين مشتركين</div></div>
+        <div class="ast"><div class="ai">🔑</div><span class="an" id="adm-st-codes">0</span><div class="al">أكواد نشطة</div></div>
+        <div class="ast"><div class="ai">💰</div><span class="an" id="adm-st-rev">0</span><div class="al">إجمالي الإيرادات (د.ت)</div></div>
+        <div class="ast"><div class="ai">📅</div><span class="an" id="adm-st-bk">0</span><div class="al">حجوزات اليوم</div></div>
+      </div>
+      <div class="sec-hdr"><div class="sec-t">💈 كل الحلاقين</div></div>
+      <div class="sec-line"></div>
+      <div id="adm-barbers-list"></div>
+    </div>
+
+    <!-- CODES -->
+    <div class="adp" id="adp-codes">
+      <!-- Generate -->
+      <div class="gen-form">
+        <h3>🔑 إنشاء كود اشتراك جديد</h3>
+        <div class="fld"><label>اسم الحلاق (اختياري)</label>
+          <input type="text" id="gen-name" placeholder="مثال: كريم بن سالم"></div>
+        <div class="fld"><label>نوع الاشتراك</label></div>
+        <div class="sub-plans" id="admin-plans"></div>
+        <div class="fld"><label>عدد الوحدات</label>
+          <input type="number" id="gen-qty" value="1" min="1" max="24">
+        </div>
+        <div style="background:rgba(212,160,23,.08);border:1px solid rgba(212,160,23,.2);border-radius:9px;padding:12px;margin-bottom:12px;font-size:13px" id="gen-preview">
+          اختار نوع الاشتراك والعدد
+        </div>
+        <button class="btn-main btn-gold" onclick="generateCode()">🔑 إنشاء الكود</button>
+      </div>
+      <!-- Codes list -->
+      <div class="sec-hdr"><div class="sec-t">📋 كل الأكواد</div></div>
+      <div class="sec-line"></div>
+      <div class="codes-grid" id="codes-list"></div>
+    </div>
+
+    <!-- BARBERS -->
+    <div class="adp" id="adp-barbers">
+      <div class="sec-hdr"><div class="sec-t">💈 الحلاقين المشتركين</div></div>
+      <div class="sec-line"></div>
+      <div id="adm-barbers-full"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════ BARBER AUTH ══════════════ -->
+<div id="sc-barber-auth" class="sc">
+  <div class="topbar">
+    <button class="back-btn" onclick="go('sc-land')"><span class="back-arrow">›</span> رجوع</button>
+    <div class="tb-brand" onclick="go('sc-land')">
+      <div class="tb-brand-ico">✂️</div><div class="tb-brand-nm">HAJEM TW</div>
+    </div>
+    <div style="width:80px"></div>
+  </div>
+  <div class="auth-bg">
+    <div class="auth-wrap">
+      <div class="auth-tabs">
+        <button class="atab on" onclick="switchBTab('login')">تسجيل الدخول</button>
+        <button class="atab" onclick="switchBTab('register')">حساب جديد</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="apanel on" id="bap-login">
+        <div class="auth-box">
+          <h2>أهلا حلاق 👋</h2>
+          <p class="sub">ادخل بكودك أو بريدك</p>
+          <div class="err" id="bl-err">البيانات غلط</div>
+          <div class="fld"><label>البريد الإلكتروني</label>
+            <input type="email" id="bl-email" placeholder="hallaq@example.tn"></div>
+          <div class="fld"><label>كلمة السر</label>
+            <input type="password" id="bl-pass" placeholder="••••••••"></div>
+          <button class="btn-main" onclick="doBarberLogin()">🔑 دخول</button>
+          <div class="divid">حسابات تجريبية</div>
+          <button class="demo-btn" onclick="demoBarber('karim')">💈 كريم — تونس العاصمة</button>
+          <button class="demo-btn" onclick="demoBarber('chokri')">✂️ شكري — صفاقس</button>
+        </div>
+      </div>
+
+      <!-- REGISTER -->
+      <div class="apanel" id="bap-register">
+        <div class="auth-box">
+          <h2>انضم كحلاق ✂️</h2>
+          <p class="sub">ادخل كود الاشتراك اللي أعطاك إياه الآدمين ثم أكمل بياناتك</p>
+          <div class="err" id="br-err"></div>
+          <div class="fld"><label>🔑 كود الاشتراك</label>
+            <input type="text" id="br-code" placeholder="مثال: HTW-XXXX" oninput="checkCode(this)">
+          </div>
+          <div id="code-info" style="display:none;background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2);border-radius:9px;padding:10px;margin-bottom:12px;font-size:12px;color:var(--GR2)"></div>
+          <div class="fld"><label>الاسم الكامل</label>
+            <input type="text" id="br-name" placeholder="مثال: كريم بن سالم"></div>
+          <div class="fld"><label>التخصص</label>
+            <input type="text" id="br-spec" placeholder="مثال: قصات عصرية وفيد"></div>
+          <div class="fld"><label>الولاية</label><select id="br-city"></select></div>
+          <div class="fld"><label>المنطقة</label><select id="br-zone" onchange="updateAreas('br-area','br-zone','br-city')"></select></div>
+          <div class="fld"><label>الحي / المكان</label><select id="br-area"></select></div>
+          <div class="fld"><label>عنوان المحل</label>
+            <input type="text" id="br-addr" placeholder="شارع، عمارة..."></div>
+          <div class="fld"><label>رقم الهاتف</label>
+            <input type="tel" id="br-phone" placeholder="2X XXX XXX"></div>
+          <div class="fld"><label>البريد الإلكتروني</label>
+            <input type="email" id="br-email" placeholder="hallaq@example.tn"></div>
+          <div class="fld"><label>كلمة السر</label>
+            <input type="password" id="br-pass" placeholder="6 أحرف على الأقل"></div>
+          <div class="fld"><label>وقت الفتح</label>
+            <select id="br-from">
+              <option value="7">7:00 صباحاً</option>
+              <option value="8" selected>8:00 صباحاً</option>
+              <option value="9">9:00 صباحاً</option>
+            </select>
+          </div>
+          <div class="fld"><label>وقت الغلق</label>
+            <select id="br-to">
+              <option value="18">6:00 مساءً</option>
+              <option value="20">8:00 مساءً</option>
+              <option value="22">10:00 مساءً</option>
+              <option value="24" selected>منتصف الليل</option>
+            </select>
+          </div>
+          <button class="btn-main" onclick="doBarberRegister()">🚀 إنشاء الحساب</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ BARBER DASHBOARD ══════════════ -->
+<div id="sc-barber" class="sc">
+  <div class="n-panel" id="n-panel">
+    <div class="np-hdr">
+      <h3>🔔 الإشعارات</h3>
+      <span class="np-clear" onclick="clearNotifs()">مسح الكل</span>
+    </div>
+    <div id="n-list"><div class="np-empty">لا توجد إشعارات</div></div>
+  </div>
+
+  <div class="topbar">
+    <button class="back-btn" onclick="go('sc-land')"><span class="back-arrow">›</span> رجوع</button>
+    <div class="tb-brand" onclick="go('sc-land')">
+      <div class="tb-brand-ico">✂️</div><div class="tb-brand-nm">HAJEM TW</div>
+    </div>
+    <div class="tb-right">
+      <div class="n-bell" id="n-bell" onclick="toggleNotif()">
+        🔔<div class="n-badge" id="n-badge">0</div>
+      </div>
+      <div class="pill" id="barber-pill">
+        <div class="ldot"></div><span id="tb-bname">الحلاق</span>
+      </div>
+      <button class="tb-btn red" onclick="barberLogout()">خروج</button>
+    </div>
+  </div>
+
+  <!-- Store status banner -->
+  <div class="store-banner closed-store" id="store-banner">
+    <div class="store-info">
+      <div class="store-dot closed" id="store-dot"></div>
+      <div class="store-txt">
+        <h4 id="store-status-txt">المتجر مغلق</h4>
+        <p id="store-status-sub">الحرفاء لا يرون مكانك الآن</p>
+      </div>
+    </div>
+    <button class="store-toggle-btn to-open" id="store-toggle-btn" onclick="toggleStore()">🟢 افتح المتجر</button>
+  </div>
+
+  <div class="dash-nav">
+    <button class="dnav on" id="dn-ov" onclick="switchDash('ov')">📊 لوحة التحكم</button>
+    <button class="dnav" id="dn-queue" onclick="switchDash('queue')">🔴 الطابور</button>
+    <button class="dnav" id="dn-bk" onclick="switchDash('bk')">📅 الحجوزات</button>
+    <button class="dnav" id="dn-sh" onclick="switchDash('sh')">🔗 رابطي</button>
+    <button class="dnav" id="dn-se" onclick="switchDash('se')">⚙️ الإعدادات</button>
+  </div>
+
+  <div class="dash-body">
+    <!-- OVERVIEW -->
+    <div class="dp on" id="dp-ov">
+      <div class="stats-row">
+        <div class="sc2"><div class="si">📅</div><span class="sn" id="st-td">0</span><div class="sl">اليوم</div></div>
+        <div class="sc2"><div class="si">⏳</div><span class="sn" id="st-qu">0</span><div class="sl">الطابور</div></div>
+        <div class="sc2"><div class="si">💰</div><span class="sn" id="st-rv">0</span><div class="sl">دخل (د.ت)</div></div>
+        <div class="sc2"><div class="si">⭐</div><span class="sn">4.9</span><div class="sl">التقييم</div></div>
+      </div>
+      <div class="sec-hdr"><div class="sec-t">📋 آخر الحجوزات</div></div>
+      <div class="sec-line"></div>
+      <div id="ov-bk"></div>
+    </div>
+
+    <!-- QUEUE TABLE -->
+    <div class="dp" id="dp-queue">
+      <div class="sec-hdr">
+        <div class="sec-t">🔴 طابور اليوم</div>
+        <div class="pill" style="font-size:10px"><div class="lpulse" style="width:7px;height:7px;border-radius:50%;background:var(--GR2);animation:pdot 1.5s infinite;flex-shrink:0"></div><span>مباشر</span></div>
+      </div>
+      <div class="sec-line"></div>
+      <div class="queue-table-wrap">
+        <table class="queue-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>الحريف</th>
+              <th>نوع الحلاقة</th>
+              <th>الوقت</th>
+              <th>الحالة</th>
+              <th>إجراء</th>
+            </tr>
+          </thead>
+          <tbody id="queue-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- BOOKINGS -->
+    <div class="dp" id="dp-bk">
+      <div class="sec-hdr">
+        <div class="sec-t">📅 كل الحجوزات</div>
+        <select onchange="filterBk(this.value)" style="padding:6px 10px;background:var(--N3);border:1px solid rgba(255,255,255,.07);border-radius:8px;color:var(--TX);font-family:'Tajawal',sans-serif;font-size:12px;outline:none;cursor:pointer">
+          <option value="all">الكل</option>
+          <option value="upcoming">القادمة</option>
+          <option value="done">المكتملة</option>
+          <option value="cancelled">الملغاة</option>
+        </select>
+      </div>
+      <div class="sec-line"></div>
+      <div id="all-bk"></div>
+    </div>
+
+    <!-- SHARE -->
+    <div class="dp" id="dp-sh">
+      <div class="set-card" style="max-width:480px">
+        <h3>📤 شارك رابطك</h3>
+        <p style="font-size:12px;color:var(--MU2);line-height:1.7;margin-bottom:10px">
+          أعطي هذا الرابط لحرفاءك باش يحجزوا مباشرة في صفحتك. كل حجز يوصلك إشعار فوري.
+        </p>
+        <div class="share-box">
+          <input type="text" id="share-inp" readonly>
+          <button onclick="copyLink()">📋 نسخ</button>
+        </div>
+        <div id="sub-info-bar" style="margin-top:14px"></div>
+        <button class="btn-main" style="max-width:180px;margin-top:12px" onclick="previewMyPage()">👁️ شوف صفحتي</button>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="dp" id="dp-se">
+      <div class="set-grid">
+        <div class="set-card">
+          <h3>👤 بياناتي</h3>
+          <div class="fld"><label>الاسم</label><input type="text" id="se-name"></div>
+          <div class="fld"><label>التخصص</label><input type="text" id="se-spec"></div>
+          <div class="fld"><label>المدينة</label><input type="text" id="se-city"></div>
+          <div class="fld"><label>الهاتف</label><input type="tel" id="se-phone"></div>
+          <button class="btn-main" onclick="saveSettings()">💾 حفظ</button>
+        </div>
+        <div class="set-card">
+          <h3>⏰ أوقات العمل</h3>
+          <div class="fld"><label>يفتح من</label>
+            <select id="se-from">
+              <option value="7">7:00 صباحاً</option>
+              <option value="8">8:00 صباحاً</option>
+              <option value="9">9:00 صباحاً</option>
+              <option value="10">10:00 صباحاً</option>
+            </select>
+          </div>
+          <div class="fld"><label>يغلق عند</label>
+            <select id="se-to">
+              <option value="18">6:00 مساءً</option>
+              <option value="20">8:00 مساءً</option>
+              <option value="22">10:00 مساءً</option>
+              <option value="24">منتصف الليل</option>
+            </select>
+          </div>
+          <div class="tog-row">
+            <div><div class="tl">إجازة الأحد</div></div>
+            <label class="tog"><input type="checkbox" id="se-sun"><div class="tog-track"></div></label>
+          </div>
+          <div class="tog-row">
+            <div><div class="tl">إجازة السبت</div></div>
+            <label class="tog"><input type="checkbox" id="se-sat"><div class="tog-track"></div></label>
+          </div>
+          <button class="btn-main" style="margin-top:10px" onclick="saveSettings()">💾 حفظ</button>
+        </div>
+        <div class="set-card">
+          <h3>🛠️ الخدمات</h3>
+          <div id="svc-togs"></div>
+        </div>
+        <div class="set-card">
+          <h3>📍 موقع المحل</h3>
+          <div class="fld"><label>خط العرض (Lat)</label><input type="text" id="se-lat" placeholder="36.8065"></div>
+          <div class="fld"><label>خط الطول (Lng)</label><input type="text" id="se-lng" placeholder="10.1815"></div>
+          <div class="fld"><label>عنوان تفصيلي</label><input type="text" id="se-addr"></div>
+          <button class="btn-main" onclick="saveSettings()">💾 حفظ الموقع</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CLIENT AUTH ══════════════ -->
+<div id="sc-client-auth" class="sc">
+  <div class="topbar">
+    <button class="back-btn" onclick="go('sc-land')"><span class="back-arrow">›</span> رجوع</button>
+    <div class="tb-brand" onclick="go('sc-land')">
+      <div class="tb-brand-ico">✂️</div><div class="tb-brand-nm">HAJEM TW</div>
+    </div>
+    <div style="width:80px"></div>
+  </div>
+  <div class="auth-bg">
+    <div class="auth-wrap">
+      <div class="auth-tabs">
+        <button class="atab on" onclick="switchCTab('login')">دخول</button>
+        <button class="atab" onclick="switchCTab('register')">حساب جديد (مجاني)</button>
+      </div>
+      <div class="apanel on" id="cap-login">
+        <div class="auth-box">
+          <h2>مرحبا 👋</h2>
+          <p class="sub">ادخل لحسابك — مجاني تماماً</p>
+          <div class="err" id="cl-err">الهاتف أو كلمة السر غلط</div>
+          <div class="fld"><label>رقم الهاتف</label><input type="tel" id="cl-ph" placeholder="2X XXX XXX"></div>
+          <div class="fld"><label>كلمة السر</label><input type="password" id="cl-ps" placeholder="••••••••"></div>
+          <button class="btn-main btn-green" onclick="doClientLogin()">🔑 دخول</button>
+          <div class="divid">أو</div>
+          <button class="demo-btn" onclick="goClientHome()">👤 تصفح بدون حساب</button>
+        </div>
+      </div>
+      <div class="apanel" id="cap-register">
+        <div class="auth-box">
+          <h2>حساب مجاني 🎉</h2>
+          <p class="sub">اسمك ورقمك وكلمة السر — وخلاص</p>
+          <div class="err" id="cr-err"></div>
+          <div class="fld"><label>الاسم الكامل</label><input type="text" id="cr-nm" placeholder="مثال: فريد العجمي"></div>
+          <div class="fld"><label>رقم الهاتف</label><input type="tel" id="cr-ph" placeholder="2X XXX XXX"></div>
+          <div class="fld"><label>كلمة السر</label><input type="password" id="cr-ps" placeholder="6 أحرف على الأقل"></div>
+          <button class="btn-main btn-green" onclick="doClientRegister()">🚀 إنشاء الحساب</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CLIENT HOME ══════════════ -->
+<div id="sc-client" class="sc">
+  <div class="topbar">
+    <button class="back-btn" onclick="go('sc-land')"><span class="back-arrow">›</span> رجوع</button>
+    <div class="tb-brand" onclick="go('sc-land')">
+      <div class="tb-brand-ico">✂️</div><div class="tb-brand-nm">HAJEM TW</div>
+    </div>
+    <div class="tb-right">
+      <div class="pill" id="client-pill" style="display:none">
+        <span>👤</span><span id="client-pill-nm">حريف</span>
+      </div>
+      <button class="tb-btn red" id="client-logout-btn" style="display:none" onclick="clientLogout()">خروج</button>
+      <button class="tb-btn outline" id="client-login-btn" onclick="go('sc-client-auth')">دخول</button>
+    </div>
+  </div>
+  <div class="loc-bar" id="loc-bar">
+    <span class="lc active" onclick="navLoc(-1)">🇹🇳 تونس</span>
+  </div>
+  <div class="region-wrap" id="region-wrap">
+    <div class="reg-title" id="reg-title">اختار ولايتك</div>
+    <div class="reg-sub" id="reg-sub">اختار مكانك باش نلقالك أقرب حلاق</div>
+    <div class="reg-grid" id="reg-grid"></div>
+  </div>
+</div>
+
+<!-- ══════════════ EXPLORE ══════════════ -->
+<div id="sc-explore" class="sc">
+  <div class="topbar">
+    <button class="back-btn" onclick="go('sc-client')"><span class="back-arrow">›</span> رجوع</button>
+    <div class="tb-brand" onclick="go('sc-client')">
+      <div class="tb-brand-ico">✂️</div><div class="tb-brand-nm">HAJEM TW</div>
+    </div>
+    <div style="width:80px"></div>
+  </div>
+  <div class="loc-bar" id="exp-loc-bar"></div>
+  <div class="exp-hero">
+    <h1>حلاقين <span id="exp-zone-nm">منطقتك</span></h1>
+    <p id="exp-zone-sub">اختار الحلاق المناسب واحجز مكانك</p>
+    <div class="search-row">
+      <input type="text" id="exp-q" placeholder="ابحث بالاسم..." oninput="renderBarbers()">
+      <button class="s-btn" onclick="renderBarbers()">🔍</button>
+    </div>
+  </div>
+  <div class="fchips">
+    <div class="fchip on" onclick="setFilter(this,'all')">🌟 الكل</div>
+    <div class="fchip" onclick="setFilter(this,'open')">🟢 مفتوح الآن</div>
+    <div class="fchip" onclick="setFilter(this,'free')">⚡ فيه مواعيد</div>
+    <div class="fchip" onclick="setFilter(this,'top')">⭐ الأعلى تقييماً</div>
+  </div>
+  <div class="exp-body">
+    <div class="barbers-grid" id="barbers-grid"></div>
+  </div>
+</div>
+
+<!-- ══════════════ BOOKING ══════════════ -->
+<div id="sc-booking" class="sc">
+  <div class="topbar">
+    <button class="back-btn" onclick="go('sc-explore')"><span class="back-arrow">›</span> رجوع</button>
+    <div class="tb-brand" onclick="go('sc-explore')">
+      <div class="tb-brand-ico">✂️</div><div class="tb-brand-nm">HAJEM TW</div>
+    </div>
+    <div style="width:80px"></div>
+  </div>
+  <div class="bp-hdr" id="bp-hdr"></div>
+  <div class="bk-wrap">
+    <div>
+      <!-- Gender -->
+      <div class="step-h" style="margin-top:0"><div class="step-n">0</div>نوع الخدمة</div>
+      <div class="gender-sel">
+        <button class="gender-btn sel" id="gb-men" onclick="setGender('men')">💈 رجال</button>
+        <button class="gender-btn ladies" id="gb-ladies" onclick="setGender('ladies')">💇‍♀️ نساء</button>
+      </div>
+
+      <div class="step-h"><div class="step-n">1</div>اختار نوع الحلاقة (يمكن أكثر من خيار)</div>
+      <div class="svcs-grid" id="bk-svcs"></div>
+
+      <div class="step-h"><div class="step-n">2</div>اختار اليوم</div>
+      <div class="date-strip" id="bk-dates"></div>
+
+      <div class="step-h"><div class="step-n">3</div>اختار الوقت</div>
+      <div class="t-legend">
+        <div class="tl2"><div class="tld av"></div>شاغر</div>
+        <div class="tl2"><div class="tld tk"></div>محجوز</div>
+        <div class="tl2"><div class="tld sl"></div>مختار</div>
+      </div>
+      <div class="tgrid" id="bk-times"></div>
+
+      <div class="step-h"><div class="step-n">4</div>بياناتك</div>
+      <div class="cf">
+        <div class="fld"><label>الاسم الكامل</label><input type="text" id="c-name" placeholder="اسمك"></div>
+        <div class="fld"><label>رقم الهاتف</label><input type="tel" id="c-phone" placeholder="2X XXX XXX"></div>
+        <div class="fld full"><label>ملاحظات (اختياري)</label><input type="text" id="c-notes" placeholder="أي تفصيل إضافي..."></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="bk-side">
+        <div class="live-box">
+          <div class="lpulse"></div>
+          <div>
+            <div class="live-t">🔴 الطابور المباشر</div>
+            <div class="live-s" id="bk-q-txt">لا حد في الانتظار</div>
+          </div>
+        </div>
+        <div class="bks-t">🧾 ملخص الحجز</div>
+        <div class="sum-row"><span class="sum-l">الخدمة</span><span class="sum-v" id="s-svc">—</span></div>
+        <div class="sum-row"><span class="sum-l">التاريخ</span><span class="sum-v" id="s-date">—</span></div>
+        <div class="sum-row"><span class="sum-l">الوقت</span><span class="sum-v" id="s-time">—</span></div>
+        <div class="sum-tot"><span>المجموع</span><span id="s-tot">0 د.ت</span></div>
+        <button class="btn-book" onclick="confirmBooking()">✅ تأكيد الحجز</button>
+        <div class="mq-sec">
+          <h4>📋 الطابور الآن</h4>
+          <div id="mini-q"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-bg" id="ok-modal">
+  <div class="modal-box">
+    <span class="mi">🎉</span>
+    <h2>تم الحجز!</h2>
+    <p>موعدك محجوز والحلاق وصله إشعار فوري. نتمناك وقت زين!</p>
+    <div class="bk-ref" id="ok-ref">HTW-0000</div>
+    <div class="modal-rows" id="ok-rows"></div>
+    <button class="modal-close" onclick="closeModal()">بارك الله فيك! 🙌</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ══════ CONSTANTS ══════ */
+const ADMIN = { pass:'hamaamine' };
+
+const PLANS = [
+  { id:'week',  label:'أسبوعي',   price:10, days:7,   unit:'أسبوع',  discount:'' },
+  { id:'month', label:'شهري',     price:30, days:30,  unit:'شهر',    discount:'' },
+  { id:'3month',label:'3 أشهر',   price:80, days:90,  unit:'3 أشهر', discount:'توفير 10 د.ت' },
+  { id:'6month',label:'6 أشهر',   price:150,days:180, unit:'6 أشهر', discount:'توفير 30 د.ت' },
+  { id:'year',  label:'سنوي',     price:300,days:365, unit:'سنة',    discount:'توفير 60 د.ت' },
+];
+
+/* Men services */
+const MEN_SVCS = [
+  {id:1, name:'حجامة عادية (رأس فقط)',   em:'✂️', price:8,  ladies:false},
+  {id:2, name:'حجامة مع لحية',           em:'🪒', price:13, ladies:false},
+  {id:3, name:'حجامة + لحية + بروشينق',  em:'💈', price:18, ladies:false},
+  {id:4, name:'تشكيل لحية فقط',          em:'🧔', price:8,  ladies:false},
+  {id:5, name:'تنظيف بشرة',              em:'✨', price:10, ladies:false},
+  {id:6, name:'صبغ شعر رجالي',           em:'🎨', price:20, ladies:false},
+  {id:7, name:'قصة أطفال',               em:'🧒', price:6,  ladies:false},
+  {id:8, name:'تدليك رأس',               em:'🧠', price:7,  ladies:false},
+];
+
+/* Ladies services */
+const LADIES_SVCS = [
+  {id:101, name:'تسريح شعر',             em:'💇‍♀️', price:15, ladies:true},
+  {id:102, name:'قص شعر',               em:'✂️', price:20, ladies:true},
+  {id:103, name:'صبغ شعر',              em:'🎨', price:35, ladies:true},
+  {id:104, name:'كيراتين',              em:'💎', price:50, ladies:true},
+  {id:105, name:'مكياج',                em:'💄', price:30, ladies:true},
+  {id:106, name:'تنظيف وجه',           em:'✨', price:20, ladies:true},
+  {id:107, name:'أضافر (مناكير + باديكير)', em:'💅', price:25, ladies:true},
+  {id:108, name:'إزالة شعر (وجه)',      em:'🌸', price:15, ladies:true},
+  {id:109, name:'رسم حواجب',           em:'👁️', price:12, ladies:true},
+  {id:110, name:'ترطيب وتدليك شعر',    em:'🧴', price:18, ladies:true},
+];
+
+const DAYS   = ['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+const MONTHS = ['جانفي','فيفري','مارس','أفريل','ماي','جوان','جويلية','أوت','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+
+/* ══════ GEO DATA ══════ */
+const GEO = {
+  'تونس العاصمة':{ico:'🏛️',zones:{
+    'المدينة العتيقة':['باب سويقة','باب الجزيرة','الزيتونة','المدينة الداخلية'],
+    'المرسى':['المرسى','قرطاج','سيدي بوسعيد','النصر','المنار'],
+    'أريانة':['رواد','المنيهلة','التضامن','سيدي ثابت','حي البدر'],
+    'باردو':['باردو','الملاسين','الزهروني'],
+    'التحرير':['التحرير','العمران الأعلى','حي الخضراء','المكين'],
+    'بن عروس':['المروج','حمام الأنف','مقرين','المحمدية'],
+    'منوبة':['منوبة','دوار هيشر','الجديدة','طبربة'],
+    'لاكارج':['لاكارج','العوينة','حي النور'],
+  }},
+  'صفاقس':{ico:'🌊',zones:{
+    'صفاقس المدينة':['المدينة العتيقة','باب جبلي','باب البحر','المقياس'],
+    'ساقية الزيت':['ساقية الزيت','العين','المزرعة'],
+    'طينة':['طينة','الشيحية','الرابطة'],
+    'عقارب':['عقارب','الشواشي','كركر'],
+    'المحرس':['المحرس','جبنيانة','بئر علي'],
+  }},
+  'سوسة':{ico:'🏖️',zones:{
+    'سوسة المدينة':['المدينة','الرقادة','خزامة','بوجعفر'],
+    'حمام سوسة':['حمام سوسة','أكودة','القنطاوي'],
+    'القلعة الكبرى':['القلعة الكبرى','بني حسن'],
+  }},
+  'قفصة':{ico:'🏜️',zones:{
+    'قفصة المدينة':['قفصة','الغار','لالة'],
+    'المتلوي':['المتلوي','المظيلة','الرديف'],
+  }},
+  'بنزرت':{ico:'⚓',zones:{
+    'بنزرت المدينة':['بنزرت','جومين','ماطر'],
+    'منزل بورقيبة':['منزل بورقيبة','تنجة','غزالة'],
+    'رأس الجبل':['رأس الجبل','العالية','أوتيك'],
+  }},
+  'نابل':{ico:'🍊',zones:{
+    'نابل المدينة':['نابل','قليبية','الحمامات'],
+    'الهوارية':['الهوارية','القرة','أقبي'],
+  }},
+  'المنستير':{ico:'🕌',zones:{
+    'المنستير':['المنستير','طبلبة','صيادة'],
+    'المكنين':['المكنين','قصر هلال','زرمدين'],
+  }},
+  'المهدية':{ico:'🐟',zones:{
+    'المهدية':['المهدية','قصور الساف','السواني'],
+    'شبة':['شبة','ملولش','رجيش'],
+  }},
+  'القيروان':{ico:'🕍',zones:{
+    'القيروان المدينة':['القيروان','الشبيكة','نصر الله'],
+    'سبيطلة':['سبيطلة','العلاء'],
+  }},
+  'قابس':{ico:'🌴',zones:{
+    'قابس المدينة':['قابس المدينة','قابس البحر'],
+    'مطماطة':['مطماطة','النوايل','الحامة'],
+  }},
+  'مدنين':{ico:'🦂',zones:{
+    'مدنين':['مدنين','بن قردان','جرجيس'],
+    'جربة':['حومة السوق','ميدون','أجيم'],
+  }},
+  'توزر':{ico:'🌵',zones:{
+    'توزر':['توزر','نفطة','حزوة'],
+  }},
+  'قبلي':{ico:'🏔️',zones:{
+    'قبلي':['قبلي','دوز','سوق الأحد','الفوار'],
+  }},
+  'جندوبة':{ico:'🌿',zones:{
+    'جندوبة':['جندوبة','بوسالم','طبرقة'],
+    'عين دراهم':['عين دراهم','مجاز الباب'],
+  }},
+  'باجة':{ico:'🌾',zones:{
+    'باجة':['باجة','تستور','نفزة'],
+  }},
+  'الكاف':{ico:'⛰️',zones:{
+    'الكاف':['الكاف','تاله','قلعة سنان'],
+  }},
+  'سليانة':{ico:'🌄',zones:{
+    'سليانة':['سليانة','مكثر'],
+  }},
+  'زغوان':{ico:'💧',zones:{
+    'زغوان':['زغوان','البيرة','الفحص'],
+  }},
+  'سيدي بوزيد':{ico:'🌻',zones:{
+    'سيدي بوزيد':['سيدي بوزيد','المزونة','المكناسي'],
+  }},
+  'تطاوين':{ico:'🏛️',zones:{
+    'تطاوين':['تطاوين','رمادة','غمراسن'],
+  }},
+};
+
+/* ══════ DATABASE ══════ */
+let DB = {
+  codes: {
+    'HTW-DEMO1': { id:'HTW-DEMO1', plan:'month', qty:3, daysTotal:90, barberName:'كريم', usedBy:'karim', activeSince:Date.now()-5*24*3600000, active:true },
+    'HTW-DEMO2': { id:'HTW-DEMO2', plan:'year',  qty:1, daysTotal:365, barberName:'شكري', usedBy:'chokri', activeSince:Date.now()-10*24*3600000, active:true },
+    'HTW-FREE1': { id:'HTW-FREE1', plan:'week',  qty:2, daysTotal:14, barberName:null, usedBy:null, activeSince:null, active:false },
+  },
+  barbers: {
+    karim: {
+      id:'karim', name:'كريم بن سالم', specialty:'قصات عصرية وفيد تدرجي',
+      city:'تونس العاصمة', zone:'المرسى', area:'سيدي بوسعيد',
+      addr:'شارع الحبيب بورقيبة، عمارة 12', phone:'25 123 456',
+      email:'karim@hajem.tn', password:'123456',
+      rating:4.9, from:8, to:24, sunOff:false, satOff:false,
+      activeSvcs:[1,2,3,4,5], notifications:[],
+      lat:'36.8694', lng:'10.3369', codeId:'HTW-DEMO1',
+      storeOpen:false, lastSeen:Date.now()-9*3600000, // was 9h ago = auto-closed
+      sessionId: null,
+    },
+    chokri: {
+      id:'chokri', name:'شكري المنصوري', specialty:'حلاقة كلاسيك وتشكيل لحية',
+      city:'صفاقس', zone:'صفاقس المدينة', area:'باب البحر',
+      addr:'حي بئر علي، طريق المحرس', phone:'28 987 654',
+      email:'chokri@hajem.tn', password:'123456',
+      rating:4.8, from:8, to:20, sunOff:true, satOff:false,
+      activeSvcs:[1,2,3,5,8], notifications:[],
+      lat:'34.7397', lng:'10.7602', codeId:'HTW-DEMO2',
+      storeOpen:true, lastSeen:Date.now(),
+      sessionId: null,
+    },
+  },
+  bookings: {
+    karim:[
+      {id:'HTW-1001',customer:'فريد العجمي',phone:'22 111 222',svcs:[1,2],gender:'men',date:td(),time:'09:00',price:21,status:'upcoming',notes:'',queueNum:1},
+      {id:'HTW-1002',customer:'بلال التريكي',phone:'27 333 444',svcs:[3],gender:'men',date:td(),time:'10:30',price:18,status:'upcoming',notes:'',queueNum:2},
+      {id:'HTW-1003',customer:'يوسف بوعزيز',phone:'23 555 666',svcs:[2],gender:'men',date:td(),time:'08:30',price:13,status:'done',notes:'',queueNum:1},
+    ],
+    chokri:[
+      {id:'HTW-2001',customer:'سامي الغربي',phone:'26 777 888',svcs:[1],gender:'men',date:td(),time:'09:30',price:8,status:'upcoming',notes:'',queueNum:1},
+    ],
+  },
+  clients: {},
+};
+
+/* ══════ STATE ══════ */
+let currentBarber = null;
+let currentClient = null;
+let currentBarberPage = null;
+let exploreFilter = 'all';
+let locPath = [];
+let _exploreCity = null, _exploreZone = null, _exploreArea = null;
+let selectedGender = 'men';
+let selectedPlan = null;
+let selectedAdminPlan = null;
+
+let sel = { svcs:new Set(), dateKey:null, dateLabel:'', timeKey:null, timeLabel:'' };
+
+/* ══════ UTILS ══════ */
+function td(){ return new Date().toISOString().split('T')[0]; }
+function fmtH(h){ const hh=h%24,h12=hh===0?12:hh>12?hh-12:hh; return h12+':00 '+(hh<12?'ص':'م'); }
+function fmtD(ds){ const d=new Date(ds+'T00:00:00'); return d.getDate()+' '+MONTHS[d.getMonth()]; }
+function genSlots(from,to){
+  const s=[];
+  for(let h=from;h<to;h++){
+    for(let m of[0,30]){
+      const hh=h%24,key=String(hh).padStart(2,'0')+':'+(m===0?'00':'30');
+      const h12=hh===0?12:hh>12?hh-12:hh,per=hh<12?'ص':'م';
+      s.push({key,label:h12+':'+(m===0?'00':'30')+' '+per});
+    }
+  }
+  return s;
+}
+function txt(id,v){const e=document.getElementById(id);if(e)e.textContent=v;}
+function el(id){return document.getElementById(id);}
+
+let _toast=null;
+function showToast(msg){
+  const t=el('toast'); t.textContent=msg; t.classList.add('on');
+  if(_toast)clearTimeout(_toast);
+  _toast=setTimeout(()=>t.classList.remove('on'),2800);
+}
+
+function go(id){
+  document.querySelectorAll('.sc').forEach(s=>s.classList.remove('on'));
+  const e=el(id); if(e)e.classList.add('on');
+}
+
+/* ══════ STORE AUTO-CLOSE (8h) ══════ */
+function checkStoreAutoClose(){
+  Object.values(DB.barbers).forEach(b=>{
+    if(b.storeOpen && b.lastSeen){
+      const hoursAgo=(Date.now()-b.lastSeen)/(1000*3600);
+      if(hoursAgo>=8) b.storeOpen=false;
+    }
+  });
+}
+// Check every minute
+setInterval(checkStoreAutoClose,60000);
+checkStoreAutoClose();
+
+/* ══════ ADMIN AUTH ══════ */
+function doAdminLogin(){
+  const p=el('adm-pass').value.trim();
+  const err=el('adm-err'); err.style.display='none';
+  if(p!==ADMIN.pass){err.style.display='block';return;}
+  refreshAdmin(); go('sc-admin');
+}
+
+/* ══════ ADMIN PANEL ══════ */
+function switchAdmin(tab){
+  document.querySelectorAll('.anav').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.adp').forEach(p=>p.classList.remove('on'));
+  el('an-'+tab).classList.add('on');
+  el('adp-'+tab).classList.add('on');
+}
+
+function refreshAdmin(){
+  // Stats
+  const barbers=Object.values(DB.barbers);
+  const codes=Object.values(DB.codes);
+  const activeCodes=codes.filter(c=>c.active&&c.usedBy);
+  const rev=activeCodes.reduce((a,c)=>{
+    const plan=PLANS.find(p=>p.id===c.plan);
+    return a+(plan?plan.price*c.qty:0);
+  },0);
+  const todayBks=Object.values(DB.bookings).flat().filter(b=>b.date===td());
+  txt('adm-st-barbers',barbers.length);
+  txt('adm-st-codes',activeCodes.length);
+  txt('adm-st-rev',rev);
+  txt('adm-st-bk',todayBks.length);
+  renderAdminBarbers();
+  renderCodes();
+  renderAdminPlanCards();
+}
+
+function renderAdminPlanCards(){
+  const wrap=el('admin-plans'); if(!wrap)return;
+  wrap.innerHTML=PLANS.map(p=>`
+    <div class="plan-card${selectedAdminPlan===p.id?' sel':''}" onclick="selectAdminPlan('${p.id}');updateGenPreview()">
+      <div class="pn">${p.label}</div>
+      <div class="pp">${p.price}</div>
+      <div class="pu">د.ت / ${p.unit}</div>
+      ${p.discount?`<div class="pd">🎁 ${p.discount}</div>`:''}
+    </div>`).join('');
+}
+
+function selectAdminPlan(id){
+  selectedAdminPlan=id;
+  renderAdminPlanCards();
+}
+
+function updateGenPreview(){
+  const qty=parseInt(el('gen-qty')?.value||1);
+  const plan=PLANS.find(p=>p.id===selectedAdminPlan);
+  const prev=el('gen-preview'); if(!prev)return;
+  if(!plan){prev.textContent='اختار نوع الاشتراك والعدد';return;}
+  const totalDays=plan.days*qty;
+  const totalPrice=plan.price*qty;
+  prev.innerHTML=`<strong style="color:var(--G)">${plan.label} × ${qty}</strong> = <span style="color:var(--GR2)">${totalDays} يوم</span> | <span style="color:var(--G)">${totalPrice} د.ت</span>`;
+}
+
+el('gen-qty')?.addEventListener('input',updateGenPreview);
+
+function generateCode(){
+  if(!selectedAdminPlan){showToast('⚠️ اختار نوع الاشتراك');return;}
+  const qty=parseInt(el('gen-qty')?.value||1);
+  const name=el('gen-name')?.value.trim()||null;
+  const plan=PLANS.find(p=>p.id===selectedAdminPlan);
+  const code='HTW-'+Math.random().toString(36).toUpperCase().slice(2,8);
+  DB.codes[code]={id:code,plan:selectedAdminPlan,qty,daysTotal:plan.days*qty,
+    barberName:name,usedBy:null,activeSince:null,active:false};
+  refreshAdmin();
+  showToast('✅ تم إنشاء الكود: '+code);
+  if(el('gen-name'))el('gen-name').value='';
+  if(el('gen-qty'))el('gen-qty').value='1';
+}
+
+function renderCodes(){
+  const wrap=el('codes-list'); if(!wrap)return;
+  const codes=Object.values(DB.codes).reverse();
+  if(!codes.length){wrap.innerHTML='<div style="color:var(--MU2);text-align:center;padding:24px">لا توجد أكواد</div>';return;}
+  wrap.innerHTML=codes.map(c=>{
+    const plan=PLANS.find(p=>p.id===c.plan);
+    const isActive=c.usedBy&&c.activeSince;
+    const daysLeft=isActive?Math.max(0,Math.ceil((c.activeSince+c.daysTotal*86400000-Date.now())/86400000)):null;
+    const statusClass=isActive?(daysLeft>0?'cs-active':'cs-expired'):'cs-unused';
+    const statusLabel=isActive?(daysLeft>0?'نشط':'منتهي'):'غير مستخدم';
+    return `<div class="code-card">
+      <div class="cc-code">${c.id}</div>
+      <div class="cc-info">
+        <div class="cc-name">${c.barberName||'—'}</div>
+        <div class="cc-meta">
+          ${plan?.label||''} × ${c.qty} | ${c.daysTotal} يوم
+          ${isActive?'| متبقي: '+daysLeft+' يوم':''}
+        </div>
+      </div>
+      <div class="cc-status ${statusClass}">${statusLabel}</div>
+      <div style="display:flex;gap:5px">
+        ${!c.usedBy?`<button class="tb-btn outline" style="font-size:10px;padding:4px 10px" onclick="copyCode('${c.id}')">📋 نسخ</button>`:''}
+        <button class="tb-btn" style="font-size:10px;padding:4px 10px;background:rgba(220,20,60,.1);border:1px solid rgba(220,20,60,.2)!important;color:#FCA5A5" onclick="deleteCode('${c.id}')">🗑️</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function copyCode(code){
+  try{
+    const inp=document.createElement('input');
+    inp.value=code;document.body.appendChild(inp);
+    inp.select();document.execCommand('copy');
+    document.body.removeChild(inp);
+    showToast('📋 تم نسخ الكود: '+code);
+  }catch(e){showToast(code);}
+}
+
+function deleteCode(code){
+  delete DB.codes[code]; renderCodes(); showToast('🗑️ تم حذف الكود');
+}
+
+function renderAdminBarbers(){
+  const barbers=Object.values(DB.barbers);
+  const listEl=el('adm-barbers-list');
+  const fullEl=el('adm-barbers-full');
+  const html=barbers.map((b,i)=>{
+    const bks=(DB.bookings[b.id]||[]).filter(bk=>bk.date===td());
+    const code=b.codeId?DB.codes[b.codeId]:null;
+    const daysLeft=code&&code.activeSince?Math.max(0,Math.ceil((code.activeSince+code.daysTotal*86400000-Date.now())/86400000)):0;
+    return `<div class="code-card">
+      <div class="ni-ico" style="width:42px;height:42px;border-radius:10px;flex-shrink:0;font-size:20px;background:linear-gradient(135deg,var(--R),var(--R2));display:flex;align-items:center;justify-content:center">✂️</div>
+      <div class="cc-info">
+        <div class="cc-name">${b.name} — ${b.city} / ${b.zone||''}</div>
+        <div class="cc-meta">📞 ${b.phone} | 📅 ${bks.length} حجز اليوم | متبقي ${daysLeft} يوم</div>
+      </div>
+      <div class="cc-status ${b.storeOpen?'cs-active':'cs-expired'}">${b.storeOpen?'🟢 مفتوح':'🔴 مغلق'}</div>
+    </div>`;
+  }).join('');
+  if(listEl) listEl.innerHTML=html||'<div style="color:var(--MU2);text-align:center;padding:24px">لا يوجد حلاقين</div>';
+  if(fullEl) fullEl.innerHTML=html||'<div style="color:var(--MU2);text-align:center;padding:24px">لا يوجد حلاقين</div>';
+}
+
+/* ══════ BARBER AUTH ══════ */
+function switchBTab(t){
+  document.querySelectorAll('#sc-barber-auth .atab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('#sc-barber-auth .apanel').forEach(p=>p.classList.remove('on'));
+  if(t==='login'){
+    document.querySelectorAll('#sc-barber-auth .atab')[0].classList.add('on');
+    el('bap-login').classList.add('on');
+  }else{
+    document.querySelectorAll('#sc-barber-auth .atab')[1].classList.add('on');
+    el('bap-register').classList.add('on');
+  }
+}
+
+function doBarberLogin(){
+  const email=el('bl-email').value.trim(), pass=el('bl-pass').value.trim();
+  const err=el('bl-err'); err.style.display='none';
+  const b=Object.values(DB.barbers).find(b=>b.email===email&&b.password===pass);
+  if(!b){err.style.display='block';return;}
+  loginBarber(b.id);
+}
+
+function demoBarber(id){loginBarber(id);}
+
+function loginBarber(id){
+  currentBarber=id;
+  const b=DB.barbers[id];
+  // Session management (one device)
+  const newSession='sess_'+Date.now();
+  b.sessionId=newSession;
+  b.lastSeen=Date.now();
+  txt('tb-bname',b.name);
+  // Load settings
+  const fmap={'se-name':'name','se-spec':'specialty','se-city':'city','se-phone':'phone'};
+  Object.entries(fmap).forEach(([fid,key])=>{const e=el(fid);if(e)e.value=b[key]||'';});
+  const sf=el('se-from'); if(sf)sf.value=String(b.from);
+  const st=el('se-to'); if(st)st.value=String(b.to);
+  const sun=el('se-sun'); if(sun)sun.checked=b.sunOff;
+  const sat=el('se-sat'); if(sat)sat.checked=b.satOff;
+  const slat=el('se-lat'); if(slat)slat.value=b.lat||'';
+  const slng=el('se-lng'); if(slng)slng.value=b.lng||'';
+  const saddr=el('se-addr'); if(saddr)saddr.value=b.addr||'';
+  el('share-inp').value=window.location.href.split('?')[0]+'?barber='+id;
+  renderSvcToggles();
+  refreshDash();
+  updateStoreBanner();
+  renderNotifs();
+  renderSubInfo();
+  go('sc-barber');
+  // Update lastSeen every 5 min
+  if(window._barberPing)clearInterval(window._barberPing);
+  window._barberPing=setInterval(()=>{
+    if(currentBarber===id&&DB.barbers[id]?.sessionId===newSession){
+      DB.barbers[id].lastSeen=Date.now();
+    }
+  },5*60*1000);
+}
+
+function barberLogout(){
+  if(currentBarber&&DB.barbers[currentBarber]){
+    DB.barbers[currentBarber].sessionId=null;
+  }
+  currentBarber=null;
+  if(window._barberPing)clearInterval(window._barberPing);
+  el('bl-email').value='';el('bl-pass').value='';
+  go('sc-land');
+}
+
+function doBarberRegister(){
+  const code=el('br-code').value.trim().toUpperCase();
+  const name=el('br-name').value.trim();
+  const spec=el('br-spec').value.trim();
+  const city=el('br-city').value;
+  const zone=el('br-zone').value;
+  const area=el('br-area').value;
+  const addr=el('br-addr').value.trim();
+  const phone=el('br-phone').value.trim();
+  const email=el('br-email').value.trim();
+  const pass=el('br-pass').value.trim();
+  const from=parseInt(el('br-from').value);
+  const to=parseInt(el('br-to').value);
+  const errEl=el('br-err'); errEl.style.display='none';
+
+  // Validate code
+  const codeObj=DB.codes[code];
+  if(!codeObj){errEl.textContent='⚠️ الكود غير موجود';errEl.style.display='block';return;}
+  if(codeObj.usedBy){errEl.textContent='⚠️ هذا الكود مستعمل باش';errEl.style.display='block';return;}
+  if(!name||!spec||!city||!phone||!email||!pass){errEl.textContent='⚠️ عبي كل الخانات';errEl.style.display='block';return;}
+  if(pass.length<6){errEl.textContent='⚠️ كلمة السر أقل من 6 أحرف';errEl.style.display='block';return;}
+  if(Object.values(DB.barbers).find(b=>b.email===email)){errEl.textContent='⚠️ هذا البريد موجود باش';errEl.style.display='block';return;}
+
+  const id='b_'+Date.now();
+  DB.barbers[id]={id,name,specialty:spec,city,zone,area,addr,phone,email,password:pass,
+    rating:0,from,to,sunOff:false,satOff:false,activeSvcs:[1,2,3],notifications:[],
+    lat:null,lng:null,codeId:code,storeOpen:false,lastSeen:Date.now(),sessionId:null};
+  DB.bookings[id]=[];
+  // Activate code
+  codeObj.usedBy=id;codeObj.activeSince=Date.now();codeObj.active=true;
+  showToast('✅ تم إنشاء حسابك بنجاح!');
+  loginBarber(id);
+}
+
+function checkCode(inp){
+  const code=inp.value.trim().toUpperCase();
+  const info=el('code-info'); if(!info)return;
+  const c=DB.codes[code];
+  if(!c){info.style.display='none';return;}
+  if(c.usedBy){
+    info.style.display='block';
+    info.style.background='rgba(220,20,60,.08)';info.style.borderColor='rgba(220,20,60,.2)';info.style.color='#FCA5A5';
+    info.textContent='⚠️ هذا الكود مستعمل باش';return;
+  }
+  const plan=PLANS.find(p=>p.id===c.plan);
+  info.style.display='block';
+  info.style.background='rgba(22,163,74,.08)';info.style.borderColor='rgba(22,163,74,.2)';info.style.color='var(--GR2)';
+  info.textContent='✅ كود صالح | '+plan?.label+' × '+c.qty+' = '+c.daysTotal+' يوم';
+}
+
+/* ══════ STORE TOGGLE ══════ */
+function toggleStore(){
+  if(!currentBarber)return;
+  const b=DB.barbers[currentBarber];
+  b.storeOpen=!b.storeOpen;
+  b.lastSeen=Date.now();
+  updateStoreBanner();
+  showToast(b.storeOpen?'🟢 تم فتح المتجر! الحرفاء يشوفونك الآن':'🔴 تم إغلاق المتجر');
+}
+
+function updateStoreBanner(){
+  if(!currentBarber)return;
+  const b=DB.barbers[currentBarber];
+  const banner=el('store-banner');
+  const dot=el('store-dot');
+  const stxt=el('store-status-txt');
+  const ssub=el('store-status-sub');
+  const tbtn=el('store-toggle-btn');
+  if(!banner)return;
+  if(b.storeOpen){
+    banner.className='store-banner open-store';
+    dot.className='store-dot open';
+    stxt.textContent='المتجر مفتوح 🟢';
+    ssub.textContent='الحرفاء يشوفونك الآن — يغلق تلقائياً بعد 8 ساعات من عدم الدخول';
+    tbtn.className='store-toggle-btn to-close';
+    tbtn.textContent='🔴 إغلاق المتجر';
+  }else{
+    banner.className='store-banner closed-store';
+    dot.className='store-dot closed';
+    stxt.textContent='المتجر مغلق 🔴';
+    ssub.textContent='الحرفاء لا يرون مكانك الآن';
+    tbtn.className='store-toggle-btn to-open';
+    tbtn.textContent='🟢 افتح المتجر';
+  }
+}
+
+/* ══════ SUBSCRIPTION INFO ══════ */
+function renderSubInfo(){
+  if(!currentBarber)return;
+  const b=DB.barbers[currentBarber];
+  const code=b.codeId?DB.codes[b.codeId]:null;
+  const bar=el('sub-info-bar'); if(!bar)return;
+  if(!code||!code.activeSince){
+    bar.innerHTML='<div style="background:rgba(220,20,60,.08);border:1px solid rgba(220,20,60,.2);border-radius:9px;padding:12px;font-size:12px;color:#FCA5A5">⚠️ لا يوجد اشتراك نشط</div>';
+    return;
+  }
+  const plan=PLANS.find(p=>p.id===code.plan);
+  const daysLeft=Math.max(0,Math.ceil((code.activeSince+code.daysTotal*86400000-Date.now())/86400000));
+  const expDate=new Date(code.activeSince+code.daysTotal*86400000);
+  bar.innerHTML=`<div class="sub-info-box">
+    <div class="si-title">🔑 اشتراكك النشط</div>
+    <div class="si-meta">${plan?.label||''} × ${code.qty} — ينتهي ${expDate.getDate()} ${MONTHS[expDate.getMonth()]}</div>
+    <div class="si-days">${daysLeft} <small style="font-size:14px;font-weight:600;color:var(--MU2)">يوم متبقي</small></div>
+  </div>`;
+}
+
+/* ══════ DASHBOARD ══════ */
+function switchDash(tab){
+  document.querySelectorAll('.dnav').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.dp').forEach(p=>p.classList.remove('on'));
+  el('dn-'+tab).classList.add('on');
+  el('dp-'+tab).classList.add('on');
+  if(tab==='queue')renderQueueTable();
+}
+
+function refreshDash(){
+  if(!currentBarber)return;
+  const bks=DB.bookings[currentBarber]||[];
+  const todayBks=bks.filter(b=>b.date===td());
+  const queueBks=todayBks.filter(b=>b.status==='upcoming');
+  const rev=todayBks.filter(b=>b.status==='done').reduce((a,b)=>a+b.price,0);
+  txt('st-td',todayBks.length);txt('st-qu',queueBks.length);txt('st-rv',rev);
+  renderBkSimple('ov-bk',bks.slice(-5).reverse());
+  renderBkSimple('all-bk',bks.slice().reverse());
+  renderQueueTable();
+}
+
+function filterBk(status){
+  if(!currentBarber)return;
+  const bks=DB.bookings[currentBarber]||[];
+  const filtered=status==='all'?bks:bks.filter(b=>b.status===status);
+  renderBkSimple('all-bk',filtered.slice().reverse());
+}
+
+function renderBkSimple(cid,bks){
+  const wrap=el(cid); if(!wrap)return;
+  if(!bks.length){
+    wrap.innerHTML='<div style="color:var(--MU2);text-align:center;padding:30px;font-size:13px">لا توجد حجوزات</div>';
+    return;
+  }
+  const sm={upcoming:'bg qb-up ⏳ قادم',done:'gg qb-done ✅ مكتمل',cancelled:'rg qb-done ❌ ملغي'};
+  wrap.innerHTML='<div style="display:flex;flex-direction:column;gap:8px">'+bks.map((b,i)=>{
+    const svcs=b.svcs.map(sid=>{
+      const all=[...MEN_SVCS,...LADIES_SVCS];
+      return all.find(s=>s.id===sid)?.name||'';
+    }).filter(Boolean);
+    const [bc,...rest]=sm[b.status]?.split(' ')||['bg'];
+    const bl=rest.join(' ');
+    return `<div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--N2);border:1px solid rgba(255,255,255,.05);border-radius:10px;flex-wrap:wrap">
+      <div style="width:28px;height:28px;background:rgba(178,34,34,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:var(--R2);flex-shrink:0">${i+1}</div>
+      <div style="flex:1;min-width:100px">
+        <div style="font-size:13px;font-weight:700">${b.customer}</div>
+        <div style="font-size:11px;color:var(--MU2)">📞 ${b.phone} | ${svcs.join('، ')} | 🕐 ${b.time}</div>
+      </div>
+      <div class="qt-badge ${bc}">${bl}</div>
+      <div style="font-size:13px;font-weight:900;color:var(--G)">${b.price} د</div>
+      ${b.status==='upcoming'?`
+        <button class="qt-act done" onclick="markDone('${b.id}')">✅ خلّص</button>
+        <button class="qt-act cancel" onclick="cancelBk('${b.id}')">❌ إلغاء</button>
+      `:''}
+    </div>`;
+  }).join('')+'</div>';
+}
+
+/* ══════ QUEUE TABLE ══════ */
+function renderQueueTable(){
+  if(!currentBarber)return;
+  const tbody=el('queue-tbody'); if(!tbody)return;
+  const bks=DB.bookings[currentBarber]||[];
+  const todayUpcoming=bks.filter(b=>b.date===td()&&b.status==='upcoming')
+    .sort((a,b)=>a.time.localeCompare(b.time));
+  const todayDone=bks.filter(b=>b.date===td()&&b.status==='done')
+    .sort((a,b)=>a.time.localeCompare(b.time));
+  const allToday=[...todayDone,...todayUpcoming];
+  // Renumber from 1 for today
+  let qNum=1;
+  allToday.forEach(b=>{ b.queueNum=qNum++; });
+
+  if(!allToday.length){
+    tbody.innerHTML='<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--MU2)">لا توجد حجوزات اليوم</td></tr>';
+    return;
+  }
+
+  const now=new Date();
+  const nowTime=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+
+  tbody.innerHTML=allToday.map((b,i)=>{
+    const all=[...MEN_SVCS,...LADIES_SVCS];
+    const svcs=b.svcs.map(sid=>all.find(s=>s.id===sid)).filter(Boolean);
+    const isNow=b.status==='upcoming'&&b.time<=nowTime&&(i===0||todayUpcoming.indexOf(b)===0);
+    const isLadies=b.gender==='ladies';
+    const statusLabel=b.status==='done'?'<div class="qt-badge qb-done">✅ خلّص</div>':
+      isNow?'<div class="qt-badge qb-now">🔴 الآن</div>':
+      '<div class="qt-badge qb-up">⏳ قادم</div>';
+    return `<tr>
+      <td><div class="qt-num${isNow?' now':''}">${b.queueNum}</div></td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="qt-av"><span style="font-size:16px">${isLadies?'👩':'👦'}</span></div>
+          <div>
+            <div class="qt-name">${b.customer}</div>
+            <div class="qt-phone">${b.phone}</div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div style="display:flex;flex-wrap:wrap;gap:3px">
+          ${svcs.map(s=>`<span class="qt-svc-tag${isLadies?' ladies':''}">${s.name}</span>`).join('')}
+        </div>
+      </td>
+      <td><div class="qt-time">${b.time}</div></td>
+      <td>${statusLabel}</td>
+      <td>
+        ${b.status==='upcoming'?`
+          <div class="qt-act-btns">
+            <button class="qt-act done" onclick="markDone('${b.id}');renderQueueTable()">✅</button>
+            <button class="qt-act cancel" onclick="cancelBk('${b.id}');renderQueueTable()">❌</button>
+          </div>
+        `:'<span style="color:var(--MU2);font-size:11px">—</span>'}
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function markDone(id){
+  const b=findBk(id); if(b)b.status='done';
+  refreshDash(); showToast('✅ تم تحديد الحجز كمكتمل');
+}
+function cancelBk(id){
+  const b=findBk(id); if(b)b.status='cancelled';
+  refreshDash(); showToast('❌ تم إلغاء الحجز');
+}
+function findBk(id){
+  for(const uid in DB.bookings){
+    const b=DB.bookings[uid].find(b=>b.id===id);if(b)return b;
+  }return null;
+}
+
+/* ══════ SETTINGS ══════ */
+function renderSvcToggles(){
+  if(!currentBarber)return;
+  const b=DB.barbers[currentBarber];
+  const wrap=el('svc-togs'); if(!wrap)return;
+  const allSvcs=[...MEN_SVCS,...LADIES_SVCS];
+  wrap.innerHTML=allSvcs.map(s=>`
+    <div class="tog-row">
+      <div><div class="tl">${s.em} ${s.name}</div><div class="ts2">${s.price} د.ت${s.ladies?' — نساء':''}</div></div>
+      <label class="tog">
+        <input type="checkbox" id="st-${s.id}" ${(b.activeSvcs||[]).includes(s.id)?'checked':''}
+          onchange="togSvc(${s.id})">
+        <div class="tog-track"></div>
+      </label>
+    </div>`).join('');
+}
+
+function togSvc(id){
+  const b=DB.barbers[currentBarber]; if(!b.activeSvcs)b.activeSvcs=[];
+  if(b.activeSvcs.includes(id))b.activeSvcs=b.activeSvcs.filter(x=>x!==id);
+  else b.activeSvcs.push(id);
+}
+
+function saveSettings(){
+  if(!currentBarber)return;
+  const b=DB.barbers[currentBarber];
+  const map={'se-name':'name','se-spec':'specialty','se-city':'city','se-phone':'phone','se-lat':'lat','se-lng':'lng','se-addr':'addr'};
+  Object.entries(map).forEach(([fid,key])=>{const e=el(fid);if(e&&e.value)b[key]=e.value;});
+  b.from=parseInt(el('se-from')?.value)||b.from;
+  b.to=parseInt(el('se-to')?.value)||b.to;
+  b.sunOff=el('se-sun')?.checked||false;
+  b.satOff=el('se-sat')?.checked||false;
+  txt('tb-bname',b.name);
+  showToast('💾 تم حفظ الإعدادات');
+}
+
+function copyLink(){
+  const inp=el('share-inp'); inp.select();inp.setSelectionRange(0,999);
+  try{document.execCommand('copy');showToast('📋 تم نسخ الرابط!');}
+  catch(e){showToast('انسخ الرابط يدوياً');}
+}
+function previewMyPage(){if(currentBarber)openBarberPage(currentBarber);}
+
+/* ══════ NOTIFICATIONS ══════ */
+function addNotif(barberId,booking){
+  const b=DB.barbers[barberId]; if(!b)return;
+  if(!b.notifications)b.notifications=[];
+  const all=[...MEN_SVCS,...LADIES_SVCS];
+  const svcs=booking.svcs.map(sid=>all.find(s=>s.id===sid)?.name||'').join('، ');
+  b.notifications.unshift({id:'n'+Date.now(),icon:'📅',
+    title:'🔔 حجز جديد من '+booking.customer,
+    desc:'✂️ '+svcs+' — 🕐 '+booking.time+' — '+fmtD(booking.date),
+    time:new Date().toLocaleTimeString('ar-TN',{hour:'2-digit',minute:'2-digit'}),
+    unread:true});
+  if(currentBarber===barberId){
+    renderNotifs();
+    el('n-panel').classList.add('on');
+    setTimeout(()=>el('n-panel')?.classList.remove('on'),5000);
+    showToast('🔔 حجز جديد من '+booking.customer+'!');
+  }
+}
+function renderNotifs(){
+  if(!currentBarber)return;
+  const b=DB.barbers[currentBarber];
+  const notifs=b.notifications||[];
+  const unread=notifs.filter(n=>n.unread).length;
+  const badge=el('n-badge');
+  if(badge){badge.textContent=unread;unread>0?badge.classList.add('on'):badge.classList.remove('on');}
+  const list=el('n-list'); if(!list)return;
+  if(!notifs.length){list.innerHTML='<div class="np-empty">لا توجد إشعارات 🎉</div>';return;}
+  list.innerHTML=notifs.slice(0,20).map(n=>
+    `<div class="ni${n.unread?' unread':''}" onclick="markRead('${n.id}')">
+      <div class="ni-ico">${n.icon}</div>
+      <div><div class="ni-t">${n.title}</div><div class="ni-d">${n.desc}</div><div class="ni-tm">${n.time}</div></div>
+    </div>`).join('');
+}
+function markRead(nid){
+  if(!currentBarber)return;
+  const n=(DB.barbers[currentBarber].notifications||[]).find(x=>x.id===nid);
+  if(n)n.unread=false; renderNotifs();
+}
+function clearNotifs(){
+  if(!currentBarber)return;
+  DB.barbers[currentBarber].notifications=[];
+  renderNotifs(); el('n-panel').classList.remove('on');
+}
+function toggleNotif(){
+  const p=el('n-panel'); p.classList.toggle('on');
+  if(p.classList.contains('on')&&currentBarber){
+    (DB.barbers[currentBarber].notifications||[]).forEach(n=>n.unread=false);
+    renderNotifs();
+  }
+}
+document.addEventListener('click',e=>{
+  const panel=el('n-panel'),bell=el('n-bell');
+  if(panel&&bell&&!panel.contains(e.target)&&!bell.contains(e.target))panel.classList.remove('on');
+});
+
+/* ══════ CLIENT AUTH ══════ */
+function switchCTab(t){
+  document.querySelectorAll('#sc-client-auth .atab').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('#sc-client-auth .apanel').forEach(p=>p.classList.remove('on'));
+  if(t==='login'){
+    document.querySelectorAll('#sc-client-auth .atab')[0].classList.add('on');
+    el('cap-login').classList.add('on');
+  }else{
+    document.querySelectorAll('#sc-client-auth .atab')[1].classList.add('on');
+    el('cap-register').classList.add('on');
+  }
+}
+function doClientLogin(){
+  const ph=el('cl-ph').value.trim(), ps=el('cl-ps').value.trim();
+  const err=el('cl-err'); err.style.display='none';
+  const c=Object.values(DB.clients).find(c=>c.phone===ph&&c.password===ps);
+  if(!c){err.style.display='block';return;}
+  loginClient(c.id);
+}
+function doClientRegister(){
+  const nm=el('cr-nm').value.trim(), ph=el('cr-ph').value.trim(), ps=el('cr-ps').value.trim();
+  const err=el('cr-err'); err.style.display='none';
+  if(!nm||!ph||!ps){err.textContent='⚠️ عبي كل الخانات';err.style.display='block';return;}
+  if(ps.length<6){err.textContent='⚠️ كلمة السر أقل من 6 أحرف';err.style.display='block';return;}
+  if(Object.values(DB.clients).find(c=>c.phone===ph)){err.textContent='⚠️ هذا الرقم موجود باش';err.style.display='block';return;}
+  const id='c_'+Date.now();
+  DB.clients[id]={id,name:nm,phone:ph,password:ps};
+  loginClient(id);
+}
+function loginClient(id){
+  currentClient=id; updateClientUI(); goClientHome();
+}
+function clientLogout(){currentClient=null;updateClientUI();go('sc-land');}
+function goClientHome(){locPath=[];renderRegion();go('sc-client');}
+function updateClientUI(){
+  const c=currentClient?DB.clients[currentClient]:null;
+  const pill=el('client-pill'), nm=el('client-pill-nm');
+  const lb=el('client-logout-btn'), linb=el('client-login-btn');
+  if(c){
+    if(pill)pill.style.display='flex';
+    if(nm)nm.textContent=c.name.split(' ')[0];
+    if(lb)lb.style.display='';
+    if(linb)linb.style.display='none';
+  }else{
+    if(pill)pill.style.display='none';
+    if(lb)lb.style.display='none';
+    if(linb)linb.style.display='';
+  }
+}
+
+/* ══════ GEO / REGION ══════ */
+function populateCitySelect(selId){
+  const e=el(selId); if(!e)return;
+  e.innerHTML='<option value="">اختار الولاية</option>';
+  Object.keys(GEO).forEach(city=>{
+    const o=document.createElement('option');
+    o.value=city; o.textContent=GEO[city].ico+' '+city; e.appendChild(o);
+  });
+}
+function updateZones(zoneSelId,citySelId){
+  const city=el(citySelId)?.value;
+  const zoneSel=el(zoneSelId); if(!zoneSel)return;
+  if(!city||!GEO[city]){zoneSel.innerHTML='<option value="">اختار الولاية أولاً</option>';return;}
+  zoneSel.innerHTML='<option value="">اختار المنطقة</option>';
+  Object.keys(GEO[city].zones).forEach(z=>{
+    const o=document.createElement('option'); o.value=z; o.textContent=z; zoneSel.appendChild(o);
+  });
+}
+function updateAreas(areaSelId,zoneSelId,citySelId){
+  const city=el(citySelId)?.value, zone=el(zoneSelId)?.value;
+  const areaSel=el(areaSelId); if(!areaSel)return;
+  if(!city||!zone||!GEO[city]?.zones[zone]){areaSel.innerHTML='<option value="">اختار المنطقة أولاً</option>';return;}
+  areaSel.innerHTML='<option value="">اختار الحي</option>';
+  GEO[city].zones[zone].forEach(a=>{
+    const o=document.createElement('option'); o.value=a; o.textContent=a; areaSel.appendChild(o);
+  });
+}
+
+function renderRegion(){
+  const grid=el('reg-grid'), title=el('reg-title'), sub=el('reg-sub'), bar=el('loc-bar');
+  // Breadcrumb
+  bar.innerHTML='<span class="lc active" onclick="navLoc(-1)">🇹🇳 تونس</span>';
+  locPath.forEach((p,i)=>{
+    bar.innerHTML+='<span class="lsep">›</span>'+
+      '<span class="lc'+(i===locPath.length-1?' active':'')+'">'+p.label+'</span>';
+  });
+
+  if(locPath.length===0){
+    title.textContent='اختار ولايتك';
+    sub.textContent='اختار مكانك باش نلقالك أقرب حلاق';
+    grid.innerHTML=Object.entries(GEO).map(([city,data])=>{
+      const cnt=Object.values(DB.barbers).filter(b=>b.city===city).length;
+      return `<div class="rgn-card" onclick="goCity('${city}')">
+        <span class="rgn-ico">${data.ico}</span>
+        <div class="rgn-name">${city}</div>
+        <div class="rgn-count">${cnt} حلاق${cnt===1?'':'ين'}</div>
+      </div>`;
+    }).join('');
+  }else if(locPath.length===1){
+    const city=locPath[0].value, geo=GEO[city];
+    title.textContent='مناطق '+city;
+    sub.textContent='اختار منطقتك';
+    if(!geo){grid.innerHTML='';return;}
+    grid.innerHTML=Object.keys(geo.zones).map(zone=>{
+      const cnt=Object.values(DB.barbers).filter(b=>b.city===city&&b.zone===zone).length;
+      return `<div class="rgn-card" onclick="goZone('${zone}')">
+        <span class="rgn-ico">🗺️</span>
+        <div class="rgn-name">${zone}</div>
+        <div class="rgn-count">${cnt} حلاق${cnt===1?'':'ين'}</div>
+      </div>`;
+    }).join('');
+  }else if(locPath.length===2){
+    const city=locPath[0].value, zone=locPath[1].value;
+    const areas=GEO[city]?.zones[zone]||[];
+    title.textContent='أحياء '+zone;
+    sub.textContent='اختار حيك بالتحديد';
+    grid.innerHTML=areas.map(area=>{
+      const cnt=Object.values(DB.barbers).filter(b=>b.city===city&&b.zone===zone&&b.area===area).length;
+      return `<div class="rgn-card" onclick="goArea('${area}')">
+        <span class="rgn-ico">📍</span>
+        <div class="rgn-name">${area}</div>
+        <div class="rgn-count">${cnt||'شوف الكل'}</div>
+      </div>`;
+    }).join('')+
+    `<div class="rgn-card" onclick="goArea('__all__')" style="border-color:rgba(178,34,34,.3)">
+      <span class="rgn-ico">🌟</span>
+      <div class="rgn-name">كل ${zone}</div>
+      <div class="rgn-count">كل الحلاقين</div>
+    </div>`;
+  }
+}
+
+function goCity(c){locPath=[{label:c,value:c,type:'city'}];renderRegion();}
+function goZone(z){locPath=[locPath[0],{label:z,value:z,type:'zone'}];renderRegion();}
+function goArea(a){
+  locPath=[...locPath,{label:a==='__all__'?'الكل':a,value:a,type:'area'}];
+  _exploreCity=locPath[0]?.value;
+  _exploreZone=locPath[1]?.value;
+  _exploreArea=a==='__all__'?null:a;
+  txt('exp-zone-nm',a==='__all__'?locPath[1]?.value:a);
+  txt('exp-zone-sub','الحلاقين المتاحين في هذه المنطقة');
+  const expBar=el('exp-loc-bar');
+  if(expBar){
+    expBar.innerHTML='<span class="lc" onclick="go(\'sc-client\');locPath=[];renderRegion()">🇹🇳 تونس</span>';
+    locPath.forEach((p,i)=>{
+      expBar.innerHTML+='<span class="lsep">›</span>'+
+        '<span class="lc'+(i===locPath.length-1?' active':'')+'">'+(p.label)+'</span>';
+    });
+  }
+  exploreFilter='all';
+  document.querySelectorAll('.fchip').forEach(c=>c.classList.remove('on'));
+  document.querySelectorAll('.fchip')[0]?.classList.add('on');
+  el('exp-q').value='';
+  renderBarbers();go('sc-explore');
+}
+function navLoc(idx){
+  if(idx===-1){locPath=[];renderRegion();return;}
+  locPath=locPath.slice(0,idx+1);renderRegion();
+}
+
+/* ══════ EXPLORE ══════ */
+function setFilter(e,f){
+  document.querySelectorAll('.fchip').forEach(c=>c.classList.remove('on'));
+  e.classList.add('on'); exploreFilter=f; renderBarbers();
+}
+function renderBarbers(){
+  checkStoreAutoClose();
+  const q=(el('exp-q')?.value||'').toLowerCase();
+  const grid=el('barbers-grid'); if(!grid)return;
+  let barbers=Object.values(DB.barbers);
+  if(_exploreCity)barbers=barbers.filter(b=>b.city===_exploreCity);
+  if(_exploreZone)barbers=barbers.filter(b=>b.zone===_exploreZone);
+  if(_exploreArea)barbers=barbers.filter(b=>b.area===_exploreArea);
+  if(q)barbers=barbers.filter(b=>b.name.toLowerCase().includes(q)||b.specialty.toLowerCase().includes(q));
+  const today=td();
+  if(exploreFilter==='open')barbers=barbers.filter(b=>b.storeOpen);
+  else if(exploreFilter==='free')barbers=barbers.filter(b=>{
+    const taken=(DB.bookings[b.id]||[]).filter(bk=>bk.date===today&&bk.status==='upcoming').map(bk=>bk.time);
+    return genSlots(b.from,b.to).some(s=>!taken.includes(s.key));
+  });
+  else if(exploreFilter==='top')barbers=barbers.filter(b=>b.rating>=4.8);
+  if(!barbers.length){
+    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--MU2)"><div style="font-size:40px;margin-bottom:10px">🔍</div><div style="font-size:16px;font-weight:700;color:var(--TX)">ما لقيناش حلاق</div><p style="margin-top:6px;font-size:13px">جرب بحث آخر أو اختار منطقة أخرى</p></div>';
+    return;
+  }
+  grid.innerHTML=barbers.map(b=>{
+    const taken=(DB.bookings[b.id]||[]).filter(bk=>bk.date===today&&bk.status==='upcoming').map(bk=>bk.time);
+    const slots=genSlots(b.from,b.to).slice(0,6);
+    const hasFree=slots.some(s=>!taken.includes(s.key));
+    const qCount=taken.length;
+    const isOpen=b.storeOpen;
+    const miniSl=slots.map(s=>`<div class="ms ${taken.includes(s.key)?'ms-r':'ms-g'}">${s.label}</div>`).join('');
+    return `<div class="bc" onclick="openBarberPage('${b.id}')">
+      <div class="bc-top">
+        <div class="bc-av"><span style="font-size:24px">✂️</span></div>
+        <div>
+          <div class="bc-name">${b.name}</div>
+          <div class="bc-spec">${b.specialty}</div>
+          <div class="bc-chips">
+            <div class="bc-chip">📍 ${b.area||b.zone||b.city}</div>
+            ${b.rating?`<div class="bc-chip">⭐ ${b.rating}</div>`:'<div class="bc-chip">🆕 جديد</div>'}
+            <div class="bc-chip">⏰ ${fmtH(b.from)}–${fmtH(b.to)}</div>
+          </div>
+        </div>
+      </div>
+      <div class="bc-store-status ${isOpen?'open':'closed'}">
+        <div class="${isOpen?'ldot':'rdot'}"></div>
+        ${isOpen?'المتجر مفتوح':'المتجر مغلق'}
+      </div>
+      ${isOpen?`<div class="avail-slots">${miniSl}</div>`:''}
+      ${isOpen?`
+        <div class="bc-bottom">
+          <div class="bc-avail-txt">
+            <div class="${hasFree?'dot-g':'dot-r'}"></div>
+            ${hasFree?'فيه مواعيد شاغرة':'مكمّل اليوم'}
+            ${qCount?' — '+qCount+' في الطابور':''}
+          </div>
+          <button class="bc-book-btn">احجز ←</button>
+        </div>
+      `:
+        `<div class="bc-closed-overlay">🔴 المتجر مغلق حالياً — رجع لاحقاً</div>`
+      }
+    </div>`;
+  }).join('');
+}
+
+/* ══════ BOOKING PAGE ══════ */
+function openBarberPage(bid){
+  const b=DB.barbers[bid]; if(!b)return;
+  currentBarberPage=bid;
+  sel={svcs:new Set(),dateKey:null,dateLabel:'',timeKey:null,timeLabel:''};
+  selectedGender='men';
+  el('gb-men').classList.add('sel'); el('gb-ladies').classList.remove('sel');
+  el('bp-hdr').innerHTML=`
+    <div class="bp-av"><span style="font-size:28px">✂️</span></div>
+    <div>
+      <div class="bp-name">${b.name}</div>
+      <div class="bp-spec">${b.specialty}</div>
+      <div class="bp-meta">
+        <div class="bmc">📍 ${b.area||b.zone||b.city}</div>
+        ${b.rating?`<div class="bmc">⭐ ${b.rating}</div>`:'<div class="bmc">🆕 جديد</div>'}
+        <div class="bmc">⏰ ${fmtH(b.from)}–${fmtH(b.to)}</div>
+        <div class="bmc">📞 ${b.phone}</div>
+      </div>
+    </div>`;
+  // Pre-fill
+  if(currentClient&&DB.clients[currentClient]){
+    const c=DB.clients[currentClient];
+    const cn=el('c-name'); if(cn)cn.value=c.name;
+    const cp=el('c-phone'); if(cp)cp.value=c.phone;
+  }
+  renderBkSvcs(b);
+  renderBkDates(b);
+  el('bk-times').innerHTML='<div style="color:var(--MU2);font-size:12px;padding:10px 0">اختار اليوم أولاً</div>';
+  updateSummary();
+  updateQueueDisplay(bid);
+  go('sc-booking');
+}
+
+function setGender(g){
+  selectedGender=g;
+  sel.svcs=new Set();
+  el('gb-men').classList.toggle('sel',g==='men');
+  el('gb-ladies').classList.toggle('sel',g==='ladies');
+  const b=DB.barbers[currentBarberPage];
+  if(b)renderBkSvcs(b);
+  updateSummary();
+}
+
+function renderBkSvcs(b){
+  const ids=b.activeSvcs||[1,2,3];
+  const pool=selectedGender==='ladies'?LADIES_SVCS:MEN_SVCS;
+  const svcs=pool.filter(s=>ids.includes(s.id));
+  el('bk-svcs').innerHTML=svcs.map(s=>
+    `<div class="svc-c${sel.svcs.has(s.id)?' sel':''}${s.ladies?' ladies-svc':''}" id="svc-${s.id}" onclick="toggleSvc(${s.id})">
+      <div class="svc-chk">✓</div>
+      <span class="svc-em">${s.em}</span>
+      <div class="svc-nm">${s.name}</div>
+      <div class="svc-pr">${s.price} <small>د.ت</small></div>
+    </div>`).join('');
+}
+
+function toggleSvc(id){
+  if(sel.svcs.has(id))sel.svcs.delete(id);
+  else sel.svcs.add(id);
+  const e=el('svc-'+id); if(e)e.classList.toggle('sel',sel.svcs.has(id));
+  updateSummary();
+}
+
+function renderBkDates(b){
+  const now=new Date(); let html='';
+  for(let i=0;i<10;i++){
+    const d=new Date(now); d.setDate(now.getDate()+i);
+    const key=d.toISOString().split('T')[0];
+    const dayName=i===0?'اليوم':DAYS[d.getDay()];
+    const off=(b.sunOff&&d.getDay()===0)||(b.satOff&&d.getDay()===6);
+    html+=`<div class="dch${off?' doff':''}" id="dc-${key}" onclick="${off?'':("selDate('"+key+"','"+dayName+' '+d.getDate()+' '+MONTHS[d.getMonth()]+"')")}">
+      <div class="dd">${dayName}</div><div class="dn">${d.getDate()}</div>
+      <div class="dm">${MONTHS[d.getMonth()]}</div>
+      ${off?'<div class="doff-l">إجازة</div>':''}
+    </div>`;
+  }
+  el('bk-dates').innerHTML=html;
+}
+
+function selDate(key,label){
+  sel.dateKey=key; sel.dateLabel=label;
+  document.querySelectorAll('.dch').forEach(c=>c.classList.remove('sel'));
+  const e=el('dc-'+key); if(e)e.classList.add('sel');
+  renderBkTimes(); updateSummary();
+}
+
+function renderBkTimes(){
+  if(!currentBarberPage)return;
+  const b=DB.barbers[currentBarberPage];
+  const taken=(DB.bookings[currentBarberPage]||[])
+    .filter(bk=>bk.date===sel.dateKey&&bk.status!=='cancelled').map(bk=>bk.time);
+  const slots=genSlots(b.from,b.to);
+  el('bk-times').innerHTML=slots.map(s=>{
+    const isTaken=taken.includes(s.key), isSel=sel.timeKey===s.key;
+    let cls='tsl ';
+    if(isSel)cls+='sel'; else if(isTaken)cls+='taken'; else cls+='avail';
+    const oc=!isTaken?`onclick="selTime('${s.key}','${s.label}')"` :'';
+    return `<div class="${cls}" ${oc}>${s.label}<span class="ts-sub">${isTaken?'محجوز':'شاغر'}</span></div>`;
+  }).join('');
+}
+
+function selTime(key,label){
+  sel.timeKey=sel.timeKey===key?null:key;
+  sel.timeLabel=sel.timeKey?label:'';
+  renderBkTimes(); updateSummary();
+}
+
+function updateSummary(){
+  const all=[...MEN_SVCS,...LADIES_SVCS];
+  const svcs=[...sel.svcs].map(id=>all.find(s=>s.id===id)).filter(Boolean);
+  const total=svcs.reduce((a,s)=>a+s.price,0);
+  txt('s-svc',svcs.length?svcs.map(s=>s.name).join('، '):'—');
+  txt('s-date',sel.dateLabel||'—');
+  txt('s-time',sel.timeLabel||'—');
+  txt('s-tot',total+' د.ت');
+}
+
+function updateQueueDisplay(bid){
+  const q=(DB.bookings[bid]||[]).filter(b=>b.date===td()&&b.status==='upcoming');
+  txt('bk-q-txt',q.length?q.length+' شخص في الطابور':'لا حد في الانتظار');
+  const mq=el('mini-q'); if(!mq)return;
+  if(!q.length){mq.innerHTML='<p style="font-size:11px;color:var(--MU2)">الطابور فارغ 🎉</p>';return;}
+  const all=[...MEN_SVCS,...LADIES_SVCS];
+  mq.innerHTML=q.slice(0,5).map((b,i)=>`
+    <div class="mqi">
+      <div class="mqp${i===0?' now':''}">${i===0?'▶':i+1}</div>
+      <span style="font-weight:700;flex:1">${b.customer.split(' ')[0]}</span>
+      <span style="color:var(--MU2);font-size:10px">${b.svcs.map(sid=>all.find(s=>s.id===sid)?.name||'').filter(Boolean).join('، ')}</span>
+    </div>`).join('');
+}
+
+function confirmBooking(){
+  const name=el('c-name').value.trim(), phone=el('c-phone').value.trim();
+  const notes=el('c-notes').value.trim();
+  if(sel.svcs.size===0){showToast('⚠️ اختار نوع الحلاقة أولاً');return;}
+  if(!sel.dateKey){showToast('⚠️ اختار اليوم أولاً');return;}
+  if(!sel.timeKey){showToast('⚠️ اختار الوقت أولاً');return;}
+  if(!name){showToast('⚠️ أدخل اسمك');return;}
+  if(!phone){showToast('⚠️ أدخل رقم هاتفك');return;}
+  const all=[...MEN_SVCS,...LADIES_SVCS];
+  const svcs=[...sel.svcs].map(id=>all.find(s=>s.id===id)).filter(Boolean);
+  const total=svcs.reduce((a,s)=>a+s.price,0);
+  const ref='HTW-'+Math.floor(1000+Math.random()*9000);
+  const todayBks=(DB.bookings[currentBarberPage]||[]).filter(b=>b.date===td()&&b.status!=='cancelled');
+  const qNum=todayBks.length+1;
+  const booking={id:ref,customer:name,phone,svcs:[...sel.svcs],gender:selectedGender,
+    date:sel.dateKey,time:sel.timeKey,price:total,status:'upcoming',notes,queueNum:qNum};
+  if(!DB.bookings[currentBarberPage])DB.bookings[currentBarberPage]=[];
+  DB.bookings[currentBarberPage].push(booking);
+  addNotif(currentBarberPage,booking);
+  const b=DB.barbers[currentBarberPage];
+  el('ok-ref').textContent=ref;
+  el('ok-rows').innerHTML=`
+    <div class="mrow"><span class="ml">الحلاق</span><span class="mr">${b.name}</span></div>
+    <div class="mrow"><span class="ml">الخدمة</span><span class="mr">${svcs.map(s=>s.name).join('، ')}</span></div>
+    <div class="mrow"><span class="ml">التاريخ</span><span class="mr">${sel.dateLabel}</span></div>
+    <div class="mrow"><span class="ml">الوقت</span><span class="mr">${sel.timeLabel}</span></div>
+    <div class="mrow"><span class="ml">رقمك في الطابور</span><span class="mr" style="color:var(--GR2);font-size:16px">${qNum}</span></div>
+    <div class="mrow"><span class="ml">المجموع</span><span class="mr" style="color:var(--G)">${total} د.ت</span></div>`;
+  el('ok-modal').classList.add('on');
+  renderBkTimes(); updateQueueDisplay(currentBarberPage);
+}
+
+function closeModal(){el('ok-modal').classList.remove('on');}
+
+/* ══════ INIT ══════ */
+populateCitySelect('br-city');
+el('br-city')?.addEventListener('change',()=>updateZones('br-zone','br-city'));
+el('br-zone')?.addEventListener('change',()=>updateAreas('br-area','br-zone','br-city'));
+renderAdminPlanCards();
+
+// URL param
+(function(){
+  const p=new URLSearchParams(window.location.search);
+  const bid=p.get('barber');
+  if(bid&&DB.barbers[bid])openBarberPage(bid);
+})();
+</script>
+</body>
+</html>
